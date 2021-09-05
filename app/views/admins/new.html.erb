@@ -1,0 +1,11 @@
+<h1>受注入力</h1>
+
+<%= form_with(model: @admin) do |f| %>
+  <h2>会社を選択してください</h2>
+    <div class="field">
+      <%= f.label :company_id, "会社名" %>
+      <%= f.collection_select(:company_id, Company.all, :id, :name, {class: "form-control js-searchable"}) %>
+    </div>
+<% end %>
+
+<%= select_tag('animal', options_for_select([['いぬ', 'dog'], ['ねこ', 'cat'], ['とり', 'bird'], ['うし', 'cow'], ['へび', 'snake']]), class: "form-control") %>
