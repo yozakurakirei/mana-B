@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  place: MyString
+  place_remarks: MyText
+  salary: 1
+  koutsuhi: 1
+  money_remorks: MyText
+
+two:
+  place: MyString
+  place_remarks: MyText
+  salary: 1
+  koutsuhi: 1
+  money_remorks: MyText
