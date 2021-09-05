@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  root 'admin#index'
+  root 'admins#index'
   
-  resources :companies
+  resources :companies do
+    collection { post :import }
+  end
+
+  resources :admins
   resources :staffs
   resources :conditions
 

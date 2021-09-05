@@ -1,2 +1,33 @@
-<h1>Companies#index</h1>
-<p>Find me in app/views/companies/index.html.erb</p>
+<h1>スタッフ一覧</h1>
+
+<h2>CSVからインポートする</h2>
+<%= form_tag import_companies_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "インポート" %>
+<% end %>
+
+<h2>出力結果</h2>
+<table>
+  <thead>
+    <tr>
+      <th>会社名</th>
+      <th>フリガナ</th>
+      <th>商品</th>
+      <th>ブランド</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @companies.each do |c| %>
+      <tr>
+        <td><%= c.name %></td>
+        <td><%= c.name_kana %></td>
+        <td><%= c.product %></td>
+        <td><%= c.brand %></td>
+        <td><%= link_to "詳細", company_path(c) %></td>
+        <td><%= link_to "削除", company_path(c), method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
