@@ -1,4 +1,4 @@
-<h1>スタッフ一覧</h1>
+<h1>クライアント</h1>
 
 <h2>CSVからインポートする</h2>
 <%= form_tag import_companies_path, multipart: true do %>
@@ -6,7 +6,10 @@
   <%= submit_tag "インポート" %>
 <% end %>
 
-<h2>出力結果</h2>
+<h2>新規登録する</h2>
+<button><%= link_to "新規登録", new_company_path %></button>
+
+<h2>クライアント一覧</h2>
 <table>
   <thead>
     <tr>
