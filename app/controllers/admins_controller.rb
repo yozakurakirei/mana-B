@@ -1,5 +1,6 @@
 class AdminsController < ApplicationController
   def index
+    @admins = Admin.includes(:company, :staff).all
   end
   
   def new

@@ -2,3 +2,32 @@
 <p>Find me in app/views/admins/index.html.erb</p>
 
 <button><%= link_to "新規作成", new_admin_path %></button>
+
+<h2>受注一覧</h2>
+<table>
+  <thead>
+    <tr>
+      <th>会社名</th>
+      <th>商品</th>
+      <th>ブランド</th>
+      <th>場所</th>
+      <th>スタッフ名</th>
+      <th>給与</th>
+      <th>交通費</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @admins.each do |a| %>
+      <tr>
+        <td><%= a.company.name %></td> 
+        <td><%= a.company.product %></td> 
+        <td><%= a.company.brand %></td> 
+        <td><%= a.place %></td> 
+        <td><%= a.staff.name %></td> 
+        <td><%= a.salary %>円</td>
+        <td><%= a.koutsuhi %>円</td> 
+      </tr>
+    <% end %>
+  </tbody>
+</table>
