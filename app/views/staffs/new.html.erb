@@ -1,2 +1,15 @@
-<h1>Staffs#new</h1>
-<p>Find me in app/views/staffs/new.html.erb</p>
+<h1>スタッフ新規登録</h1>
+
+
+<%= form_with(model: @staff, local: true) do |f| %>
+  <%= f.label :name, "氏名" %>
+  <%= f.text_field :name %>
+
+  <%= f.label :name_kanak, "フリガナ" %>
+  <%= f.text_field :name_kanak %>
+
+  <%= f.label :remarks, "スタッフ備考" %>
+  <%= f.text_area :remarks %>
+
+  <%= f.submit "登録" %>
+<% end %>

@@ -1,9 +1,12 @@
 <h1>受注入力</h1>
 
+<% @admin.errors.full_messages.each do |m| %>
+  <%= m %>
+<% end %>
+
 <%= form_with(model: @admin) do |f| %>
-  <h2>会社を選択してください</h2>
     <div class="field">
-      <%= f.label :company_id, "会社名" %>
+      <%= f.label :company_id, "会社名を選択してください" %>
       <%= f.collection_select(:company_id, Company.all, :id, :name, {class: "form-control js-searchable"}) %>
     </div>
 
@@ -17,11 +20,16 @@
     </div>
     <div class="field">
       <%= f.label :salary, "日給" %>
-      <%= f.text_field :salary %>
+      <%= f.number_field :salary %>円
     </div>
     <div class="field">
       <%= f.label :koutsuhi, "交通費" %>
-      <%= f.text_field :koutsuhi %>
+      <%= f.number_field :koutsuhi %>円
+    </div>
+
+    <div class="field">
+      <%= f.label :staff_id, "スタッフを選択してください" %>
+      <%= f.collection_select(:staff_id, Staff.all, :id, :name, {class: "form-control js-searchable"}) %>
     </div>
 
     <%= f.submit "保存" %>

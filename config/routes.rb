@@ -5,8 +5,11 @@ Rails.application.routes.draw do
     collection { post :import }
   end
 
+  resources :staffs do
+    collection { post :import }
+  end
+
   resources :admins
-  resources :staffs
   resources :conditions
 
 end

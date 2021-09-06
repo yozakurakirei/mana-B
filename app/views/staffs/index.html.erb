@@ -1,2 +1,31 @@
-<h1>Staffs#index</h1>
-<p>Find me in app/views/staffs/index.html.erb</p>
+<h1>スタッフ一覧ページ</h1>
+
+<h2>CSVからインポートする</h2>
+<%= form_tag import_staffs_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "インポート" %>
+<% end %>
+
+
+<h2>新規登録する</h2>
+<button><%= link_to "新規登録", new_staff_path %></button>
+
+<h2>スタッフ一覧</h2>
+<table>
+  <thead>
+    <tr>
+      <th>氏名</th>
+      <th>フリガナ</th>
+      <th>備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @staffs.each do |s| %>
+    <tr>
+      <th><%= s.name %></th>
+      <th><%= s.name_kanak %></th>
+      <th><%= s.remarks %></th>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -8,8 +8,9 @@ class AdminsController < ApplicationController
 
   def create
     @admin = Admin.new(admin_params)
+    
     if @admin.save
-      redirect_to @admin
+      redirect_to admins_path
     else
       render 'new'
     end
@@ -24,6 +25,6 @@ class AdminsController < ApplicationController
   private
 
     def admin_params
-      params.require(:admin).permit(:company_id, :place, :place_remarks, :salary, :koutsuhi)
+      params.require(:admin).permit(:company_id, :place, :place_remarks, :salary, :koutsuhi, :staff_id)
     end
 end
