@@ -1,0 +1,26 @@
+.admin {
+  padding: 1rem;
+  .grid_area {
+    display: grid;
+    padding: 1rem;
+    gap: 1rem;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+      "company staff"
+      "condition houkoku";
+    .admin_company {
+      grid-area: company;
+    }
+    .admin_staff {
+      grid-area: staff;
+    }
+    .admin_condition {
+      grid-area: condition;
+    }
+    .admin_hokoku {
+      grid-area: houkoku;
+    }
+  }
+}
+
+

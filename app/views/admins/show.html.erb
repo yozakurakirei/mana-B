@@ -1,2 +1,36 @@
-<h1>Admins#show</h1>
-<p>Find me in app/views/admins/show.html.erb</p>
+<div class="admin">
+  <h1>受注詳細</h1>
+  <button><%= link_to "編集", edit_admin_path(@admin) %></button>
+
+  <div class="grid_area">
+    <div class="admin_company">
+      <h2>クライアント情報</h2>
+      <ul>
+        <li>会社名：<%= @admin.company.name %></li>
+        <li>フリガナ：<%= @admin.company.name_kana %></li>
+        <li>商品：<%= @admin.company.product %></li>
+        <li>ブランド名：<%= @admin.company.brand %></li>
+      </ul>
+    </div>
+
+    <div class="admin_staff">
+      <h2>スタッフ情報</h2>
+      <ul>
+        <li>氏名：<%= @admin.staff.name %></li>
+        <li>フリガナ：<%= @admin.staff.name_kanak %></li>
+      </ul>
+    </div>
+    
+    <div class="admin_condition">
+      <h2>勤務条件</h2>
+      <ul>
+        <li>就業場所： <%= @admin.place %></li>
+        <li>給与：<%= @admin.salary %>円</li>
+        <li>交通費：<%= @admin.koutsuhi %>円</li>
+      </ul>
+    </div>
+    <div class="admin_houkoku">
+      <h2>勤務報告</h2>
+    </div>
+  </div>
+</div>

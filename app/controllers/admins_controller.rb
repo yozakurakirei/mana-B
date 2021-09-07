@@ -18,9 +18,11 @@ class AdminsController < ApplicationController
   end
 
   def show
+    @admin = Admin.find(params[:id])
   end
 
   def edit
+    @admin = Admin.find(params[:id])
   end
 
   private
