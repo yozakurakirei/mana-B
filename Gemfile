@@ -10,8 +10,11 @@ gem 'pg', '~> 1.1'
 
 # csv
 gem 'roo'
-
 gem 'nokogiri'
+
+# css
+gem 'tailwindcss-rails'
+
 
 # Use Puma as the app server
 gem 'puma', '~> 5.0'

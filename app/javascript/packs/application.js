@@ -10,8 +10,9 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap';
+import '@fortawesome/fontawesome-free/js/all';
 import '../css/application.scss'
-// import "stylesheets/application.scss"
+import '../css/tailwind.css'
 import 'select2';  
 import 'select2/dist/css/select2.css';
 import '../js/select'
