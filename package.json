@@ -26,9 +26,6 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "@webpack-cli/serve": "^1.5.2",
-    "css-loader": "^6.2.0",
-    "expose-loader": "^3.0.0",
-    "imports-loader": "^3.0.0"
+    "@webpack-cli/serve": "^1.5.2"
   }
 }
