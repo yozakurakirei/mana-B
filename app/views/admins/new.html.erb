@@ -1,36 +1,44 @@
-<h1>受注入力</h1>
+<div class="admin_new">
+  <div class="admin_title">
+    <h1>受注入力</h1>
+  </div>
 
-<% @admin.errors.full_messages.each do |m| %>
-  <%= m %>
-<% end %>
+  <% @admin.errors.full_messages.each do |m| %>
+    <%= m %>
+  <% end %>
 
-<%= form_with(model: @admin) do |f| %>
-    <div class="field">
-      <%= f.label :company_id, "会社名を選択してください" %>
-      <%= f.collection_select(:company_id, Company.all, :id, :name, {class: "form-control js-searchable"}) %>
-    </div>
+  <div class="bg-white shadow-md p-4 rounded">
+    <%= form_with(model: @admin) do |f| %>
+      <div class="admin_field">
+        <%= f.label :company_id, "会社名を選択してください" %>
+        <%= f.collection_select(:company_id, Company.all, :id, :name, {class: "form-control"}) %>
+      </div>
 
-    <div class="field">
-      <%= f.label :place, "出店場所" %>
-      <%= f.text_field :place %>
-    </div>
-    <div class="field">
-      <%= f.label :place_remarks, "備考" %>
-      <%= f.text_field :place_remarks %>
-    </div>
-    <div class="field">
-      <%= f.label :salary, "日給" %>
-      <%= f.number_field :salary %>円
-    </div>
-    <div class="field">
-      <%= f.label :koutsuhi, "交通費" %>
-      <%= f.number_field :koutsuhi %>円
-    </div>
+      <div class="admin_field">
+        <%= f.label :place, "出店場所" %>
+        <%= f.text_field :place, class: "form-control" %>
+      </div>
+      <div class="admin_field">
+        <%= f.label :place_remarks, "備考" %>
+        <%= f.text_field :place_remarks, class: "form-control" %>
+      </div>
+      <div class="admin_field">
+        <%= f.label :salary, "日給" %>
+        <%= f.number_field :salary, class: "form-control" %>円
+      </div>
+      <div class="admin_field">
+        <%= f.label :koutsuhi, "交通費" %>
+        <%= f.number_field :koutsuhi, class: "form-control" %>円
+      </div>
 
-    <div class="field">
-      <%= f.label :staff_id, "スタッフを選択してください" %>
-      <%= f.collection_select(:staff_id, Staff.all, :id, :name, {class: "form-control js-searchable"}) %>
-    </div>
+      <div class="admin_field">
+        <%= f.label :staff_id, "スタッフを選択してください" %>
+        <%= f.collection_select(:staff_id, Staff.all, :id, :name, {class: "select_form"}) %>
+      </div>
 
-    <%= f.submit "保存" %>
-<% end %>
+      <%= f.submit "保存", class: "bg-gradient-to-r from-green-400 to-green-600 ... hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+    <% end %>
+
+  </div>
+
+</div>
