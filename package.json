@@ -12,6 +12,8 @@
     "@tailwindcss/postcss7-compat": "^2.2.10",
     "autoprefixer": "^9",
     "bootstrap": "4",
+    "datatables.net": "^1.11.2",
+    "datatables.net-dt": "^1.11.2",
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
     "postcss": "^7",
@@ -24,6 +26,9 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "@webpack-cli/serve": "^1.5.2"
+    "@webpack-cli/serve": "^1.5.2",
+    "css-loader": "^6.2.0",
+    "expose-loader": "^3.0.0",
+    "imports-loader": "^3.0.0"
   }
 }
