@@ -6,3 +6,4 @@ $(function () {
 
   $('#admin_table').DataTable();
 });
+

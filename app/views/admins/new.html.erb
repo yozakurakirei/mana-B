@@ -8,44 +8,59 @@
   <% end %>
 
   <div class="bg-white shadow-md p-4 rounded">
-    <%= form_with(model: @admin) do |f| %>
-      <div class="admin_field">
-        <%= f.label :company_id, "会社名を選択してください" %>
-        <%= f.collection_select(:company_id, Company.all, :id, :name, {class: "form-control"}) %>
-      </div>
+      <%= form_with(model: @admin) do |f| %>
+    <div class="admin_area">
 
-      <div class="admin_field">
-        <%= f.label :place, "出店場所" %>
-        <%= f.text_field :place, class: "form-control" %>
-      </div>
-      <div class="admin_field">
-        <%= f.label :place_remarks, "備考" %>
-        <%= f.text_field :place_remarks, class: "form-control" %>
-      </div>
-      <div class="admin_field">
-        <%= f.label :salary, "日給" %>
-        <%= f.number_field :salary, class: "form-control" %>円
-      </div>
-      <div class="admin_field">
-        <%= f.label :koutsuhi, "交通費" %>
-        <%= f.number_field :koutsuhi, class: "form-control" %>円
-      </div>
+        <div class="admin_input bg-gray-100">
+          <h2>受注入力</h2>
+          <div class="admin_field">
+            <%= f.label :company_id, "会社名を選択してください" %>
+            <%= f.collection_select(:company_id, Company.all, :id, :name, {class: "form-control"}) %>
+          </div>
 
-      <div class="admin_field">
-        <%= f.label :staff_id, "スタッフを選択してください" %>
-        <%= f.collection_select(:staff_id, Staff.all, :id, :name, {class: "select_form"}) %>
-      </div>
+          <div class="admin_field">
+            <%= f.label :place, "出店場所" %>
+            <%= f.text_field :place, class: "form-control" %>
+          </div>
+          <div class="admin_field">
+            <%= f.label :place_remarks, "備考" %>
+            <%= f.text_field :place_remarks, class: "form-control" %>
+          </div>
+          <div class="admin_field">
+            <%= f.label :salary, "日給" %>
+            <%= f.number_field :salary, class: "form-control" %>円
+          </div>
+          <div class="admin_field">
+            <%= f.label :koutsuhi, "交通費" %>
+            <%= f.number_field :koutsuhi, class: "form-control" %>円
+          </div>
 
-      <%= f.fields_for :report do |r| %>
-        <div class="admin_field">
-          <%= r.label :days, "勤務日数" %>
-          <%= r.text_field :days, class: "form-control" %>円
+          <div class="admin_field">
+            <%= f.label :staff_id, "スタッフを選択してください" %>
+            <%= f.collection_select(:staff_id, Staff.all, :id, :name, {class: "select_form"}) %>
+          </div>
+        </div>
+
+        <div class="admin_houkoku">
+          <h2>勤務報告</h2>
+          <%= f.fields_for :report do |r| %>
+            <div class="admin_field">
+              <%= r.label :days, "勤務日数" %>
+              <%= r.text_field :days, class: "form-control" %>
+
+              <%= r.label :times, "勤務時間" %>
+              <%= r.text_field :times, class: "form-control" %>
+
+              <%= r.label :c_costs, "交通費" %>
+              <%= r.text_field :c_costs, class: "form-control" %>
+            </div>
+          <% end %>
+        </div>
+        <div class="admin_button">
+          <%= f.submit "保存" , data: { confirm: "保存しますか？" } ,class: "bg-gradient-to-r from-green-400 to-green-600 ... hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
         </div>
       <% end %>
-
-      <%= f.submit "保存", class: "bg-gradient-to-r from-green-400 to-green-600 ... hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
-    <% end %>
-
+    
+    </div>
   </div>
-
 </div>

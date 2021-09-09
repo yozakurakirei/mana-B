@@ -25,10 +25,28 @@
 
 // new
 .admin_new {
-  padding: 1rem;
-  margin: 1rem;
+  padding: .5rem;
   .admin_title {
     margin-bottom: 1rem;
+  }
+  .admin_area  {
+    display: grid;
+    gap: .5rem;
+    grid-template-areas: 
+      "input houkoku"
+      "button button";
+    grid-template-rows: 1fr;
+    .admin_input {
+      padding: 1rem;
+      grid-area: input;
+    }
+    .admin_houkoku {
+      padding: 1rem;
+      grid-area: houkoku;
+    }
+    .admin_button {
+      grid-area: button;
+    }
   }
   .admin_field {
     margin-bottom: 1rem;
