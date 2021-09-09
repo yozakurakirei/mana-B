@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  days: 1
+  times: 1
+  c_costs: 1
+  shotei: 1
+  choka: 1
+  remark: MyText
+
+two:
+  days: 1
+  times: 1
+  c_costs: 1
+  shotei: 1
+  choka: 1
+  remark: MyText

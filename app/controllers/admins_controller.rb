@@ -5,6 +5,7 @@ class AdminsController < ApplicationController
   
   def new
     @admin = Admin.new
+    @admin.build_report
   end
 
   def create
@@ -28,6 +29,9 @@ class AdminsController < ApplicationController
   private
 
     def admin_params
-      params.require(:admin).permit(:company_id, :place, :place_remarks, :salary, :koutsuhi, :staff_id)
+      params.require(:admin).permit(:company_id, :place, 
+        :place_remarks, :salary, :koutsuhi, :staff_id,
+        report_attributes: [:days, :times, :c_costs, :shotei, :choka, :remark,
+                             :_destroy, :id])
     end
 end

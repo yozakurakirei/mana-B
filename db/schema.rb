@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_06_144551) do
+ActiveRecord::Schema.define(version: 2021_09_09_142753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,9 @@ ActiveRecord::Schema.define(version: 2021_09_06_144551) do
     t.integer "salary"
     t.integer "koutsuhi"
     t.text "money_remarks"
+    t.bigint "report_id"
     t.index ["company_id"], name: "index_admins_on_company_id"
+    t.index ["report_id"], name: "index_admins_on_report_id"
     t.index ["staff_id"], name: "index_admins_on_staff_id"
   end
 
@@ -38,12 +40,13 @@ ActiveRecord::Schema.define(version: 2021_09_06_144551) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "conditions", force: :cascade do |t|
-    t.string "place"
-    t.text "place_remarks"
-    t.integer "salary"
-    t.integer "koutsuhi"
-    t.text "money_remorks"
+  create_table "reports", force: :cascade do |t|
+    t.integer "days"
+    t.integer "times"
+    t.integer "c_costs"
+    t.integer "shotei"
+    t.integer "choka"
+    t.text "remark"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -57,5 +60,6 @@ ActiveRecord::Schema.define(version: 2021_09_06_144551) do
   end
 
   add_foreign_key "admins", "companies"
+  add_foreign_key "admins", "reports"
   add_foreign_key "admins", "staffs"
 end
