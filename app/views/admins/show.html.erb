@@ -4,22 +4,11 @@
 
   <div class="grid_area">
     <div class="admin_company">
-      <h2>クライアント情報</h2>
-      <ul>
-        <li>会社名：<%= @admin.company.name %></li>
-        <li>フリガナ：<%= @admin.company.name_kana %></li>
-        <li>商品：<%= @admin.company.product %></li>
-        <li>ブランド名：<%= @admin.company.brand %></li>
-      </ul>
+      <%= render 'admins/koyoujouken/company' %>
     </div>
 
     <div class="admin_staff">
-      <h2>スタッフ情報</h2>
-      <ul>
-        <li>氏名：<%= @admin.staff.name %></li>
-        <li>フリガナ：<%= @admin.staff.name_kanak %></li>
-        <li>スタッフ備考：<%= @admin.staff.remarks %></li>
-      </ul>
+      <%= render 'admins/koyoujouken/staff' %>
     </div>
     
     <div class="admin_condition">

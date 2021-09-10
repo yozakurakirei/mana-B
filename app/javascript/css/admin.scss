@@ -4,15 +4,17 @@
     display: grid;
     padding: 1rem;
     gap: 1rem;
-    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: 
       "company staff"
       "condition houkoku";
     .admin_company {
       grid-area: company;
+      justify-content: center;
     }
     .admin_staff {
       grid-area: staff;
+      width: 100%;
     }
     .admin_condition {
       grid-area: condition;
