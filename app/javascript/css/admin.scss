@@ -35,16 +35,26 @@
     display: grid;
     gap: .5rem;
     grid-template-areas: 
-      "input houkoku"
-      "button button";
-    grid-template-rows: 1fr;
+      "input condition houkoku"
+      "button button button";
+    grid-template-columns: 3fr 3fr 300px;
     .admin_input {
       padding: 1rem;
       grid-area: input;
     }
+    .admin_condition {
+      padding: 1rem;
+      grid-area: condition;
+    }
     .admin_houkoku {
       padding: 1rem;
       grid-area: houkoku;
+      .houkoku_input {
+        margin: 1rem;
+        th {
+          margin: 1rem;
+        }
+      }
     }
     .admin_button {
       grid-area: button;
@@ -52,6 +62,7 @@
   }
   .admin_field {
     margin-bottom: 1rem;
+
   }
 }
 

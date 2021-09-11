@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_09_142753) do
+ActiveRecord::Schema.define(version: 2021_09_11_034614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,9 +23,15 @@ ActiveRecord::Schema.define(version: 2021_09_09_142753) do
     t.string "place"
     t.text "place_remarks"
     t.integer "salary"
-    t.integer "koutsuhi"
+    t.string "koutsuhi"
     t.text "money_remarks"
     t.bigint "report_id"
+    t.date "start", comment: "開始日"
+    t.date "finish", comment: "終了日"
+    t.time "first_shift", comment: "初日シフト"
+    t.time "start_time", comment: "始業時間"
+    t.time "finish_time", comment: "就業時間"
+    t.string "salary_kinds", comment: "日給or時給"
     t.index ["company_id"], name: "index_admins_on_company_id"
     t.index ["report_id"], name: "index_admins_on_report_id"
     t.index ["staff_id"], name: "index_admins_on_staff_id"
@@ -36,6 +42,16 @@ ActiveRecord::Schema.define(version: 2021_09_09_142753) do
     t.string "name_kana"
     t.string "product"
     t.string "brand"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "conditions", force: :cascade do |t|
+    t.string "place"
+    t.text "place_remarks"
+    t.integer "salary"
+    t.integer "koutsuhi"
+    t.text "money_remorks"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
