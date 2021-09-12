@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_12_050509) do
+ActiveRecord::Schema.define(version: 2021_09_12_093847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2021_09_12_050509) do
     t.bigint "report_id"
     t.date "start", comment: "開始日"
     t.date "finish", comment: "終了日"
-    t.time "first_shift", comment: "初日シフト"
+    t.string "first_shift", comment: "初日シフト"
     t.string "salary_kinds", comment: "日給or時給"
     t.bigint "condition_id"
     t.index ["company_id"], name: "index_admins_on_company_id"
@@ -55,10 +55,10 @@ ActiveRecord::Schema.define(version: 2021_09_12_050509) do
     t.string "test_period", comment: "試用期間"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.time "start_time", comment: "始業時間"
-    t.time "finish_time", comment: "就業時間"
     t.string "shift_umu", comment: "シフトの有無"
     t.text "remark", comment: "就業条件の備考"
+    t.time "start"
+    t.time "finish"
   end
 
   create_table "reports", force: :cascade do |t|

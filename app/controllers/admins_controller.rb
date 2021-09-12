@@ -27,8 +27,22 @@ class AdminsController < ApplicationController
 
   def edit
     @admin = Admin.find(params[:id])
-    @admin.build_report
-    @admin.build_condition
+  end
+
+  def update
+    @admin = Admin.find(params[:id])
+    if @admin.update(admin_params)
+      flash[:success] = "更新しました"
+      redirect_to admins_path
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    Admin.find(params[:id]).destroy
+    flash[:success] = "削除しました"
+    redirect_to admins_path
   end
 
   private
@@ -40,6 +54,6 @@ class AdminsController < ApplicationController
                                     :finish_time, :salary_kinds,
         report_attributes: [:report_id, :days, :times, :c_costs, :shotei, :choka, :remark,
                              :_destroy, :id],
-        condition_attributes: [:holiday, :w_hours, :w_rest, :w_total, :over, :test_period, :_destroy, :id ])
+        condition_attributes: [:holiday, :start, :finish, :w_hours, :w_rest, :w_total, :over, :test_period, :_destroy, :id ])
     end
 end

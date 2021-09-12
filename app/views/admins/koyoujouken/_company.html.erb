@@ -15,7 +15,7 @@
       </tr>
       <tr>
         <th class="w-2/5 border p-2">雇用契約期間</th>
-        <td class="w-3/5 border p-2"><%= @admin.company.brand %></td>
+        <td class="w-3/5 border p-2"><%= @admin.start %>〜<%= @admin.finish %></td>
       </tr>
       <tr>
         <th class="w-2/5 border p-2">試用期間</th>
@@ -27,10 +27,10 @@
       </tr>
       <tr>
         <th class="w-2/5 border p-2">始業・就業時間</th>
-        <td class="w-3/5 border p-2">
-          <%= @admin.condition.start_time %>
+        <td class="w-3/5 border p-2 flex">
+          <%= l @admin.condition.start, format: :shift %>
           <p>〜</p>
-          <%= @admin.condition.finish_time%>
+          <%= l @admin.condition.finish, format: :shift %>
         </td>
       </tr>
       <tr>

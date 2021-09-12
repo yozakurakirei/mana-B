@@ -2,7 +2,7 @@ class Admin < ApplicationRecord
   belongs_to :company
   belongs_to :staff
   belongs_to :report
-  belongs_to :condition, optional: true
+  belongs_to :condition, optional: true, dependent: :destroy
 
   accepts_nested_attributes_for :report, :condition
 end
