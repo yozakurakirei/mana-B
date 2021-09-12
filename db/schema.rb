@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_12_124342) do
+ActiveRecord::Schema.define(version: 2021_09_12_131624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,10 +55,10 @@ ActiveRecord::Schema.define(version: 2021_09_12_124342) do
     t.string "test_period", comment: "試用期間"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "shift_umu", comment: "シフトの有無"
-    t.text "remark", comment: "就業条件の備考"
-    t.time "start"
-    t.time "finish"
+    t.time "shift_start"
+    t.time "shift_finish"
+    t.string "shift_umu"
+    t.text "remarks"
   end
 
   create_table "reports", force: :cascade do |t|

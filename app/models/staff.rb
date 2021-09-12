@@ -1,5 +1,5 @@
 class Staff < ApplicationRecord
-  has_many :admin
+  has_many :admins
 
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|

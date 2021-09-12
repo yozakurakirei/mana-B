@@ -7,6 +7,8 @@ class CreateConditions < ActiveRecord::Migration[6.1]
       t.integer :w_total, comment: "拘束時間"
       t.string :over, comment: "所定労働時間超"
       t.string :test_period, comment: "試用期間"
+      t.time   :start_time, comment: "始業時間"
+      t.time   :finish_time, comment: "就業時間"
 
       t.timestamps
     end

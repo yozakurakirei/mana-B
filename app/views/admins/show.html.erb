@@ -19,8 +19,8 @@
         <li>交通費：<%= @admin.koutsuhi %>円</li>
       </ul>
     </div>
-    <div class="admin_houkoku">
-      <h2>勤務報告</h2>
+    <div class="admin_button">
+      <%= link_to "戻る", "javascript:history.back()" , data: { confirm: "戻りますか？" } ,class: "bg-gradient-to-r from-green-400 to-green-600 ... hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
     </div>
   </div>
 </div>

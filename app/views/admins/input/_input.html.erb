@@ -136,9 +136,9 @@
           <div class="flex mr-4 mb-4">
             <%= c.label "シフト合計" %>
             <div class="flex">
-              <%= c.time_field(:start, value: "%H:%M") %>
+              <%= c.time_field(:shift_start, value: "%H:%M") %>
               <p class="mx-2">〜</p>
-              <%= c.time_field(:finish, value: "%H:%M") %>
+              <%= c.time_field(:shift_finish, value: "%H:%M") %>
             </div>
           </div>
           <div class="flex items-center mb-4 mr-4">
@@ -184,6 +184,7 @@
       <div class="admin_button">
         <%= f.submit "保存" , data: { confirm: "保存しますか？" } ,class: "bg-gradient-to-r from-green-400 to-green-600 ... hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
         <%= link_to "戻る", "javascript:history.back()" , data: { confirm: "戻りますか？" } ,class: "bg-gradient-to-r from-green-400 to-green-600 ... hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+        <%= link_to "雇用条件書", admin_path, data: { confirm: "簡単な雇用条件書を見ますか？" } ,class: "bg-gradient-to-r from-green-400 to-green-600 ... hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
       </div>
     <% end %>
     </div>

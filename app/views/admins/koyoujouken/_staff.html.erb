@@ -1,67 +1,74 @@
 <h2 class="mb-2">【ご紹介状】</h2>
 <h3 class="mb-2">雇用条件書（<%= @admin.staff.name %>さん用）</h3>
 
-<table class="table-fixed bg-white shadow-md w-full">
-  <tbody>
-    <tr>
-      <th class="w-2/5 border p-2 mr-4">就業先</th>
-      <td class="w-3/5 border p-2 mr-4"><%= @admin.company.name %></td>
-    </tr>
-    <tr>
-      <th class="w-2/5 border p-2">業務内容</th>
-      <td class="w-3/5 border p-2"><%= @admin.company.product %></td>
-    </tr>
-    <tr>
-      <th class="w-2/5 border p-2">雇用契約期間</th>
-      <td class="w-3/5 border p-2"><%= @admin.company.brand %></td>
-    </tr>
-    <tr>
-      <th class="w-2/5 border p-2">試用期間</th>
-      <td class="w-3/5 border p-2"><%= @admin.company.brand %></td>
-    </tr>
-    <tr>
-      <th class="w-2/5 border p-2">就業先</th>
-      <td class="w-3/5 border p-2"><%= @admin.place %></td>
-    </tr>
-    <tr>
-      <th class="w-2/5 border p-2">始業・就業時間</th>
-      <td class="w-3/5 border p-2"><%= @admin.company.brand %></td>
-    </tr>
-    <tr>
-      <th class="w-2/5 border p-2 mr-4">所定労働時間を超える労働</th>
-      <td class="w-3/5 border p-2 mr-4"><%= @admin.company.brand %></td>
-    </tr>
-    <tr>
-      <th class="w-2/5 border p-2">休憩時間</th>
-      <td class="w-3/5 border p-2"><%= @admin.company.brand %></td>
-    </tr>
-    <tr>
-      <th class="w-2/5 border p-2">休日</th>
-      <td class="w-3/5 border p-2"><%= @admin.company.brand %></td>
-    </tr>
-    <tr>
-      <th class="w-2/5 border p-2">給与</th>
-      <td class="w-3/5 border p-2"><%= @admin.salary %>円</td>
-    </tr>
-    <tr>
-      <th class="w-2/5 border p-2">諸手当・交通費</th>
-      <td class="w-3/5 border p-2"><%= @admin.koutsuhi %>円</td>
-    </tr>
-    <tr>
-      <th class="w-2/5 border p-2">給与締め日支払日</th>
-      <td class="w-3/5 border p-2"><%= @admin.company.brand %></td>
-    </tr>
-    <tr>
-      <th class="w-2/5 border p-2">健康保険・厚生年金</th>
-      <td class="w-3/5 border p-2"><%= @admin.company.brand %></td>
-    </tr>
-    <tr>
-      <th class="w-2/5 border p-2">労災保険</th>
-      <td class="w-3/5 border p-2"><%= @admin.company.brand %></td>
-    </tr>
-    <tr>
-      <th class="w-2/5 border p-2">雇用保険</th>
-      <td class="w-3/5 border p-2"><%= @admin.company.brand %></td>
-    </tr>
-  </tbody>
-</table>
+<div class="company_table mr-8">
+  <table class="table-fixed bg-white shadow-md w-full mr-4">
+    <tbody>
+      <tr>
+        <th class="w-2/5 border p-2 mr-4">就業先企業</th>
+        <td class="w-3/5 border p-2 mr-4"><%= @admin.company.name %></td>
+      </tr>
+      <tr>
+        <th class="w-2/5 border p-2">業務内容</th>
+        <td class="w-3/5 border p-2"><%= @admin.company.product %></td>
+      </tr>
+      <tr>
+        <th class="w-2/5 border p-2">雇用契約期間</th>
+        <td class="w-3/5 border p-2"><%= @admin.start %>〜<%= @admin.finish %></td>
+      </tr>
+      <tr>
+        <th class="w-2/5 border p-2">試用期間</th>
+        <td class="w-3/5 border p-2"><%= @admin.condition.test_period %></td>
+      </tr>
+      <tr>
+        <th class="w-2/5 border p-2">就業先</th>
+        <td class="w-3/5 border p-2"><%= @admin.place %></td>
+      </tr>
+      <tr>
+        <th class="w-2/5 border p-2">始業・就業時間</th>
+        <td class="w-3/5 border p-2 flex">
+          <%= l @admin.condition.shift_start, format: :shift %>
+          <p>〜</p>
+          <%= l @admin.condition.shift_finish, format: :shift %>
+        </td>
+      </tr>
+      <tr>
+        <th class="w-2/5 border p-2 mr-4">所定労働時間を超える労働</th>
+        <td class="w-3/5 border p-2 mr-4"><%= @admin.condition.over %></td>
+      </tr>
+      <tr>
+        <th class="w-2/5 border p-2">休憩時間</th>
+        <td class="w-3/5 border p-2"><%= @admin.condition.w_rest %> 分</td>
+      </tr>
+      <tr>
+        <th class="w-2/5 border p-2">休日</th>
+        <td class="w-3/5 border p-2"><%= @admin.condition.holiday %></td>
+      </tr>
+      <tr>
+        <th class="w-2/5 border p-2">給与</th>
+        <td class="w-3/5 border p-2"><%= @admin.salary_kinds %>　<%= @admin.salary %>円</td>
+      </tr>
+      <tr>
+        <th class="w-2/5 border p-2">諸手当・交通費</th>
+        <td class="w-3/5 border p-2"><%= @admin.koutsuhi %></td>
+      </tr>
+      <tr>
+        <th class="w-2/5 border p-2">給与締め日支払日</th>
+        <td class="w-3/5 border p-2"></td>
+      </tr>
+      <tr>
+        <th class="w-2/5 border p-2">健康保険・厚生年金</th>
+        <td class="w-3/5 border p-2"></td>
+      </tr>
+      <tr>
+        <th class="w-2/5 border p-2">労災保険</th>
+        <td class="w-3/5 border p-2"></td>
+      </tr>
+      <tr>
+        <th class="w-2/5 border p-2">雇用保険</th>
+        <td class="w-3/5 border p-2"></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
