@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_12_131624) do
+ActiveRecord::Schema.define(version: 2021_09_12_142702) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,17 @@ ActiveRecord::Schema.define(version: 2021_09_12_131624) do
     t.string "brand"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "fee", comment: "手数料"
+    t.integer "o_fee", comment: "事務手数料"
+    t.string "closing", comment: "締日"
+    t.string "after", comment: "翌or当月"
+    t.string "payment", comment: "振込日"
+    t.string "person", comment: "担当"
+    t.string "p_tel", comment: "電話番号"
+    t.string "p_tel2", comment: "電話番号2"
+    t.string "p_fax", comment: "FAX"
+    t.string "p_email", comment: "アドレス"
+    t.text "remarks", comment: "備考"
   end
 
   create_table "conditions", force: :cascade do |t|

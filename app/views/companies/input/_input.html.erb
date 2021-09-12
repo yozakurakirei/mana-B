@@ -1,0 +1,34 @@
+<%= form_with(model: @company, local: true) do |f| %>
+  <%= f.label :name, "会社名" %>
+  <%= f.text_field :name %>
+
+  <%= f.label :name_kana, "会社名" %>
+  <%= f.text_field :name_kana %>
+
+  <%= f.label :product, "商品" %>
+  <%= f.text_field :product %>
+
+  <%= f.label :brand, "ブランド" %>
+  <%= f.text_field :brand %>
+
+  <%= f.label :fee, "手数料率" %>
+  <%= f.text_field :fee %>
+
+  <%= f.label :o_fee, "事務手数料" %>
+  <%= f.text_field :o_fee %>
+
+  <%= f.label :closing, "締日" %>
+  <%= f.text_field :closing %>
+
+  <%= f.label "振込日" %>
+  <%= f.text_field :after %>ヶ月後
+  <%= f.text_field :payment %>日
+
+  <%= f.label :person, "担当者" %>
+  <%= f.text_field :person %>
+
+  <%= f.label :remarks, "備考" %>
+  <%= f.text_area :remarks %>
+
+  <%= f.submit "登録" %>
+<% end %>

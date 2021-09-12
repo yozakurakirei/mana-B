@@ -1,13 +1,18 @@
 <div class="company_table mr-8">
 
-  <h2 class="mb-2">【ご紹介状】</h2>
-  <h3 class="mb-2">雇用条件書（クライアント用）</h3>
+  <h3 class="mb-2">雇用条件書</h3>
+  <p>クライアントにはスタッフ名を、スタッフにはクライアント名が記載されている
+  雇用条件書が発送されます。</p>
 
   <table class="table-fixed bg-white shadow-md w-full mr-4">
     <tbody>
       <tr>
-        <th class="w-2/5 border p-2 mr-4">紹介者氏名</th>
+        <th class="w-2/5 border p-2 mr-4">スタッフ名</th>
         <td class="w-3/5 border p-2 mr-4"><%= @admin.staff.name %></td>
+      </tr>
+      <tr>
+        <th class="w-2/5 border p-2 mr-4">クライアント名</th>
+        <td class="w-3/5 border p-2 mr-4"><%= @admin.company.name %></td>
       </tr>
       <tr>
         <th class="w-2/5 border p-2">業務内容</th>
@@ -27,7 +32,7 @@
       </tr>
       <tr>
         <th class="w-2/5 border p-2">始業・就業時間</th>
-        <td class="w-3/5 border p-2 flex">
+        <td class="w-3/5 p-2 flex">
           <%= l @admin.condition.shift_start, format: :shift %>
           <p>〜</p>
           <%= l @admin.condition.shift_finish, format: :shift %>
@@ -55,7 +60,10 @@
       </tr>
       <tr>
         <th class="w-2/5 border p-2">給与締め日支払日</th>
-        <td class="w-3/5 border p-2"></td>
+        <td class="w-3/5 border p-2">
+          <%= @admin.company.closing %>締め<%= @admin.company.after %>ヶ月後
+          <%= @admin.company.payment %>日払い
+        </td>
       </tr>
       <tr>
         <th class="w-2/5 border p-2">健康保険・厚生年金</th>

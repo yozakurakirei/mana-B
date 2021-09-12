@@ -29,6 +29,15 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:id])
   end
 
+  def update
+    @company = Company.find(params[:id])
+    if @company.update(company_params)
+      flash[:success] = "更新しました"
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     Company.find(params[:id]).destroy
     flash[:success] = "削除しました"
@@ -43,6 +52,9 @@ class CompaniesController < ApplicationController
   private
 
     def company_params
-      params.require(:company).permit(:name, :name_kana, :product, :brand)
+      params.require(:company).permit(:name, :name_kana, :product, :brand,
+                                      :fee, :o_fee, :closing, :after, :payment,
+                                      :person, :p_tel, :p_tel2, :p_fax, :p_email,
+                                      :remarks)
     end
 end
