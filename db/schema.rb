@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_12_093847) do
+ActiveRecord::Schema.define(version: 2021_09_12_124342) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,19 +18,19 @@ ActiveRecord::Schema.define(version: 2021_09_12_093847) do
   create_table "admins", force: :cascade do |t|
     t.bigint "company_id", null: false
     t.bigint "staff_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "report_id"
+    t.bigint "condition_id"
     t.string "place"
     t.text "place_remarks"
     t.integer "salary"
     t.string "koutsuhi"
     t.text "money_remarks"
-    t.bigint "report_id"
     t.date "start", comment: "開始日"
     t.date "finish", comment: "終了日"
     t.string "first_shift", comment: "初日シフト"
     t.string "salary_kinds", comment: "日給or時給"
-    t.bigint "condition_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["company_id"], name: "index_admins_on_company_id"
     t.index ["condition_id"], name: "index_admins_on_condition_id"
     t.index ["report_id"], name: "index_admins_on_report_id"
