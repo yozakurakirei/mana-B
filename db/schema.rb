@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_11_034614) do
+ActiveRecord::Schema.define(version: 2021_09_12_050509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,10 +29,10 @@ ActiveRecord::Schema.define(version: 2021_09_11_034614) do
     t.date "start", comment: "開始日"
     t.date "finish", comment: "終了日"
     t.time "first_shift", comment: "初日シフト"
-    t.time "start_time", comment: "始業時間"
-    t.time "finish_time", comment: "就業時間"
     t.string "salary_kinds", comment: "日給or時給"
+    t.bigint "condition_id"
     t.index ["company_id"], name: "index_admins_on_company_id"
+    t.index ["condition_id"], name: "index_admins_on_condition_id"
     t.index ["report_id"], name: "index_admins_on_report_id"
     t.index ["staff_id"], name: "index_admins_on_staff_id"
   end
@@ -47,13 +47,18 @@ ActiveRecord::Schema.define(version: 2021_09_11_034614) do
   end
 
   create_table "conditions", force: :cascade do |t|
-    t.string "place"
-    t.text "place_remarks"
-    t.integer "salary"
-    t.integer "koutsuhi"
-    t.text "money_remorks"
+    t.string "holiday", comment: "休日"
+    t.integer "w_hours", comment: "実働"
+    t.integer "w_rest", comment: "休憩"
+    t.integer "w_total", comment: "拘束時間"
+    t.string "over", comment: "所定労働時間超"
+    t.string "test_period", comment: "試用期間"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.time "start_time", comment: "始業時間"
+    t.time "finish_time", comment: "就業時間"
+    t.string "shift_umu", comment: "シフトの有無"
+    t.text "remark", comment: "就業条件の備考"
   end
 
   create_table "reports", force: :cascade do |t|
@@ -76,6 +81,7 @@ ActiveRecord::Schema.define(version: 2021_09_11_034614) do
   end
 
   add_foreign_key "admins", "companies"
+  add_foreign_key "admins", "conditions"
   add_foreign_key "admins", "reports"
   add_foreign_key "admins", "staffs"
 end

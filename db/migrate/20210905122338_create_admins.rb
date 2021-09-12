@@ -4,7 +4,7 @@ class CreateAdmins < ActiveRecord::Migration[6.1]
       t.references :company, null: false, foreign_key: true
       t.references :staff, null: false, foreign_key: true
       # conditionは勤務報告様に作成予定。今はadminと解除中
-      t.references :condition, null: false, foreign_key: true
+      t.references :condition, foreign_key: true
 
       t.timestamps
     end

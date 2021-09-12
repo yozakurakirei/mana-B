@@ -3,15 +3,15 @@
   <button><%= link_to "編集", edit_admin_path(@admin) %></button>
 
   <div class="grid_area">
-    <div class="admin_company">
+    <div class="admin_company w-full">
       <%= render 'admins/koyoujouken/company' %>
     </div>
 
-    <div class="admin_staff">
+    <div class="admin_staff w-full">
       <%= render 'admins/koyoujouken/staff' %>
     </div>
     
-    <div class="admin_condition">
+    <div class="admin_condition w-full">
       <h2>勤務条件</h2>
       <ul>
         <li>就業場所： <%= @admin.place %></li>

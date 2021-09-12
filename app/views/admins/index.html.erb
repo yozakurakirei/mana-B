@@ -19,7 +19,11 @@
   <tbody>
     <% @admins.each do |a| %>
       <tr>
-        <td><%= a.company.name %></td> 
+        <td>
+          <%= link_to edit_admin_path(a) do %>
+          <%= a.company.name %>
+          <% end %>
+        </td> 
         <td><%= a.company.product %></td> 
         <td><%= a.company.brand %></td> 
         <td><%= a.place %></td> 

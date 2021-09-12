@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  holiday: MyString
+  w_hours: 1
+  w_rest: 1
+  over: MyString
+  test_period: MyString
+
+two:
+  holiday: MyString
+  w_hours: 1
+  w_rest: 1
+  over: MyString
+  test_period: MyString

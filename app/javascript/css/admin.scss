@@ -36,6 +36,7 @@
     gap: .5rem;
     grid-template-areas: 
       "input condition houkoku"
+      "attend attend attend"
       "button button button";
     grid-template-columns: 3fr 3fr 300px;
     .admin_input {
@@ -55,6 +56,10 @@
           margin: 1rem;
         }
       }
+    }
+    .admin_attend {
+      padding: 1rem;
+      grid-area: attend;
     }
     .admin_button {
       grid-area: button;
