@@ -32,13 +32,28 @@
     margin-bottom: 1rem;
   }
   .admin_area  {
+    width: 100%;
     display: grid;
     gap: .5rem;
     grid-template-areas: 
       "input condition houkoku"
       "attend attend houkoku"
       "button button button";
-    grid-template-columns: 3fr 3fr 300px;
+      @media (max-width: 760px) {
+        width: 100%;
+        grid-template-areas:
+        "input"
+        "condition"
+        "attend"
+        "attend"
+        "houkoku"
+        "houkoku"
+        "button"
+        "button"
+        "button";
+        grid-template-columns: 1fr;
+      }
+    grid-template-columns: 1fr 1fr 300px;
     .admin_input {
       padding: 1rem;
       grid-area: input;
