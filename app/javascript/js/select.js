@@ -19,5 +19,14 @@ $(function () {
   $('#admin_staff_id').val(null).trigger("change");
 
   $('#admin_table').DataTable();
+
+  let toggleBtn = document.querySelector("#navbar-toggle");
+  let collapse = document.querySelector("#navbar-collapse");
+
+  toggleBtn.onclick = () => {
+  collapse.classList.toggle("hidden");
+  collapse.classList.toggle("flex");
+};
+
 });
 

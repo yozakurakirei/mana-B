@@ -27,10 +27,7 @@
 
 // new
 .admin_new {
-  padding: .5rem;
-  .admin_title {
-    margin-bottom: 1rem;
-  }
+  background-color: #f8f7f6;
   .admin_area  {
     width: 100%;
     display: grid;
@@ -53,10 +50,14 @@
         "button";
         grid-template-columns: 1fr;
       }
-    grid-template-columns: 1fr 1fr 300px;
+    grid-template-columns: 1fr 1fr 1fr;
     .admin_input {
       padding: 1rem;
       grid-area: input;
+    }
+    .admin_hd {
+      background-color: #eeeeee;
+      border-bottom: 1px solid #ddd;
     }
     .admin_condition {
       padding: 1rem;
