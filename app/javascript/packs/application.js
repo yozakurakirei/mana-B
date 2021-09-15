@@ -4,12 +4,13 @@
 // that code so it'll be compiled.
 
 require("jquery")
+require('bootstrap/dist/js/bootstrap.min.js')
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import 'bootstrap';
+// import 'bootstrap';
 import '@fortawesome/fontawesome-free/js/all';
 import '../css/application.scss'
 import '../css/tailwind.css'

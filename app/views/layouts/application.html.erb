@@ -11,15 +11,10 @@
   </head>
 
   <body>
+    <%= render 'layouts/mana_header' %>
     <div>
-      <div x-data="{ sidebarOpen: false }" class="flex min-h-screen bg-gray-100">
-        <%= render 'layouts/header' %>
-        <div class="flex-1 flex flex-col overflow-scroll">
-          <%= render 'layouts/secound_header' %>
-          <div class="min-h-screen">
-             <%= yield %>
-          </div>
-        </div>
+      <div class="min-h-screen">
+        <%= yield %>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>

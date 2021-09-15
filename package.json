@@ -11,7 +11,7 @@
     "@rails/webpacker": "5.4.2",
     "@tailwindcss/postcss7-compat": "^2.2.10",
     "autoprefixer": "^9",
-    "bootstrap": "4",
+    "bootstrap": "^5.1.1",
     "datatables.net": "^1.11.2",
     "datatables.net-dt": "^1.11.2",
     "jquery": "^3.6.0",
@@ -26,6 +26,10 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "@webpack-cli/serve": "^1.5.2"
+    "@webpack-cli/serve": "^1.5.2",
+    "sass": "1.32.12"
+  },
+  "resolutions": {
+    "sass": "1.32.12"
   }
 }
