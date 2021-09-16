@@ -9,6 +9,10 @@ Bundler.require(*Rails.groups)
 
 module ManaBeta
   class Application < Rails::Application
+    def after_sign_in_path_for(resource)
+      admins_path
+    end
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
