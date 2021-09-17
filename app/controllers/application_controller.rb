@@ -1,8 +1,14 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  # loginユーザーのみ中身を見れる
+  before_action :authenticate_user!
 
   def after_sign_in_path_for(resource)
-    admins_path
+    if admin_user?
+      mana_index_path
+    else
+      admins_path
+    end
   end
   
   private
