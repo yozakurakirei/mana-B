@@ -4,11 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
   def after_sign_in_path_for(resource)
-    if admin_user?
-      mana_index_path
-    else
-      admins_path
-    end
+    admins_path
   end
   
   private
