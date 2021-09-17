@@ -1,0 +1,2 @@
+module ManaHelper
+end

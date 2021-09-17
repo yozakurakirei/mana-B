@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_16_144132) do
+ActiveRecord::Schema.define(version: 2021_09_17_165218) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(version: 2021_09_16_144132) do
     t.integer "w_total", comment: "拘束時間"
     t.string "over", comment: "所定労働時間超"
     t.string "test_period", comment: "試用期間"
+    t.time "start_time", comment: "始業時間"
+    t.time "finish_time", comment: "就業時間"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.time "shift_start"
@@ -112,6 +114,7 @@ ActiveRecord::Schema.define(version: 2021_09_16_144132) do
     t.datetime "locked_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "admin", default: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
