@@ -1,5 +1,14 @@
 <% if current_user.admin? %>
   <h1>管理者権限ありのページ</h1>
 <% else %>
-  <h1><% current_user.name %>さんには権限がありません</h1>
+  <h1><%= current_user.name %>さんには権限がありません</h1>
 <% end %>
+
+<h2>タスク一覧</h2>
+<ul>
+  <li>承認申請機能</li>
+  <li>権限ページ deviseでアクセス履歴を見る</li>
+  <li>各ページレイアウト</li>
+  <li>セカンドヘッダーの実装</li>
+  <li>詳細メール自動化</li>
+</ul>
