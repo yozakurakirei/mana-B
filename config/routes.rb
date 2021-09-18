@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'mana/index'
-  get 'mana/show'
+  get 'administrator/index'
+
   resources :companies do
     collection { post :import }
   end

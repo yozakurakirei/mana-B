@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_17_165218) do
+ActiveRecord::Schema.define(version: 2021_09_18_035908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,13 @@ ActiveRecord::Schema.define(version: 2021_09_17_165218) do
     t.index ["condition_id"], name: "index_admins_on_condition_id"
     t.index ["report_id"], name: "index_admins_on_report_id"
     t.index ["staff_id"], name: "index_admins_on_staff_id"
+  end
+
+  create_table "branches", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "department"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "companies", force: :cascade do |t|
@@ -115,6 +122,8 @@ ActiveRecord::Schema.define(version: 2021_09_17_165218) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "admin", default: false
+    t.bigint "branch_id", default: 2, null: false
+    t.index ["branch_id"], name: "index_users_on_branch_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -125,4 +134,5 @@ ActiveRecord::Schema.define(version: 2021_09_17_165218) do
   add_foreign_key "admins", "conditions"
   add_foreign_key "admins", "reports"
   add_foreign_key "admins", "staffs"
+  add_foreign_key "users", "branches"
 end
