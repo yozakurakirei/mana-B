@@ -1,0 +1,5 @@
+<% if current_user.admin? %>
+  <h1>管理者権限ありのページ</h1>
+<% else %>
+  <h1><% current_user.name %>さんには権限がありません</h1>
+<% end %>
