@@ -1,4 +1,4 @@
-console.log("hello!!")
+console.log("hello! rails!")
 
 $(function () {
   $('#admin_company_id').select2({
