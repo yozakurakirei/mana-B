@@ -10,7 +10,10 @@ Rails.application.routes.draw do
     collection { post :import }
   end
   
-  resources :admins
+  resources :admins do
+    resources :applies, only: %i[index create destroy]
+    resources :belongings, only: %i[index create destroy]
+  end
   resources :conditions
   
   devise_scope :user do

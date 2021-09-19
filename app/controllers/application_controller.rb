@@ -4,7 +4,11 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
   def after_sign_in_path_for(resource)
+<<<<<<< HEAD
     administrator_index_path
+=======
+    administrator_index_path	
+>>>>>>> 95298757462c6acbd0e6a40542ffc38a4017290a
   end
   
   private

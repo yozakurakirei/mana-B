@@ -1,0 +1,34 @@
+<h2>承認待ちリスト</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>受注ID</th>
+      <th>日程</th>
+      <th>クライアント名</th>
+      <th>場所</th>
+      <th>スタッフ名</th>
+      <th>申請者</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <% @applies.each do |a| %>
+    <tbody>
+      <tr>
+        <td><%= a.admin_id %></td>
+        <td><%= a.admin.start %>〜<%= a.admin.finish %></td>
+        <td><%= a.admin.company.name %></td>
+        <td><%= a.admin.place %></td>
+        <td><%= a.admin.staff.name %></td>
+        <td>&nbsp<%= a.user.name %><br></td>
+        <td>
+          <%= link_to '承認', admin_belongings_path(a.admin, user_id: a.user.id, apply_id: a.id), method: :post %>
+        </td>
+        <td>
+          <%= link_to '否決', admin_apply_path(a.admin, a), method: :delete %>
+        </td>
+      </tr>
+    </tbody>
+  <% end %>
+</table>

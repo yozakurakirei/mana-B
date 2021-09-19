@@ -1,1 +1,14 @@
 <%= render 'admins/input/input' %>
+
+<div class="apply_button mr-4">
+  <% if @admin.user_belonging?(current_user) %>
+    <%= link_to '取り消す', admin_belonging_path(@admin, @belonging), method: :delete, data: { confirm: "申請を取り消しますか？" } %>
+  <% elsif current_user %>
+    <% if @apply %>
+      <%= link_to '申請取り消し', admin_apply_path(@admin, @apply), method: :delete %>
+    <% else %> 
+      <%= link_to '申請', admin_applies_path(@admin), method: :post,
+          data: { confirm: "#{@admin.company.name}の申請を提出しますか？" },class: "bg-gradient-to-r from-green-400 to-green-600 ... hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %> 
+    <% end %>
+  <% end %>
+</div>

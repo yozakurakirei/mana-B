@@ -1,7 +1,9 @@
 <% if current_user.admin? %>
   <h1>管理者権限ありのページ</h1>
+  <%= link_to "承認待ちリスト", class: "btn btn-primary" %>
 <% else %>
   <h1><%= current_user.name %>さんには権限がありません</h1>
+<<<<<<< HEAD
 <% end %>
 
 <h2>タスク一覧</h2>
@@ -12,3 +14,6 @@
   <li>セカンドヘッダーの実装</li>
   <li>詳細メール自動化</li>
 </ul>
+=======
+<% end %>
+>>>>>>> 95298757462c6acbd0e6a40542ffc38a4017290a
