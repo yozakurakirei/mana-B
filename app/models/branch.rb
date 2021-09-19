@@ -1,3 +1,3 @@
 class Branch < ApplicationRecord
-  # 支店モデル
+  belongs_to :user
 end

@@ -3,7 +3,9 @@
 one:
   name: MyString
   department: MyString
+  user: one
 
 two:
   name: MyString
   department: MyString
+  user: two

@@ -23,3 +23,4 @@ User.create!(name: "システム部",
              password: "password",
              password_confirmation: "password",
              admin: true)
+
