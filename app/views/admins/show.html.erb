@@ -19,8 +19,26 @@
         <li>交通費：<%= @admin.koutsuhi %>円</li>
       </ul>
     </div>
-    <div class="admin_button">
-      <%= link_to "戻る", "javascript:history.back()" , data: { confirm: "戻りますか？" } ,class: "bg-gradient-to-r from-green-400 to-green-600 ... hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+    <div class="admin_button flex items-center">
+      <div class="back_button mr-4">
+        <%= link_to "戻る", "javascript:history.back()" , data: { confirm: "戻りますか？" } ,class: "bg-gradient-to-r from-green-400 to-green-600 ... hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+      </div>
+      <div class="apply_button mr-4">
+        <% if @admin.user_belonging?(current_user) %>
+          <%= link_to '取り消す', admin_belongings_path(@admmin, @belongings), method: :delete, data: { confirm: "申請を取り消しますか？" } %>
+        <% elsif current_user %>
+          <% if @apply %>
+            <%= link_to '申請取り消し', admin_apply_path(@admin, @apply), method: :delete %>
+          <% else %> 
+            <%= link_to '申請', admin_applies_path(@admin), method: :post,
+                data: { confirm: "#{@admin.company.name}の申請を提出しますか？" },class: "bg-gradient-to-r from-green-400 to-green-600 ... hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %> 
+          <% end %>
+        <% end %>
+      </div>
+      <!-- 申請待ちリンク -->
+      <% if current_user.admin? %>
+        <%= link_to "承認待ちリスト", admin_applies_path(@admin), class: "btn btn-primary" %>
+      <% end %>
     </div>
   </div>
 </div>

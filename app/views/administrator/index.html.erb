@@ -1,5 +1,6 @@
 <% if current_user.admin? %>
   <h1>管理者権限ありのページ</h1>
+  <%= link_to "承認待ちリスト", admin_applies_path(@admin), class: "btn btn-primary" %>
 <% else %>
-  <h1><% current_user.name %>さんには権限がありません</h1>
+  <h1><%= current_user.name %>さんには権限がありません</h1>
 <% end %>

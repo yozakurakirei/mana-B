@@ -28,7 +28,7 @@
           <a class="nav-link dropdown-toggle text-white font-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <%= current_user.name %>
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul class="dropdown-menu bg-white" aria-labelledby="navbarDropdown">
             <li><%= link_to '管理者ページ', administrator_index_path, class:"dropdown-item" if current_user.admin %></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"></li>
