@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :belongings, dependent: :destroy
   has_many :applies, dependent: :destroy
   has_many :admins, through: :belongings
+
 end

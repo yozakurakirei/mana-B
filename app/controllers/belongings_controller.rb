@@ -1,4 +1,7 @@
 class BelongingsController < ApplicationController
+  def index
+    @belongings = Belonging.includes(:admin).all
+  end
 
   def create
     @belonging = Belonging.create(admin_id: belonging_params[:admin_id],

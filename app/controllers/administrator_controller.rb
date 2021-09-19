@@ -1,5 +1,5 @@
 class AdministratorController < ApplicationController
   def index
-    @admin = Apply.includes(:admin).all
+    @applies = Apply.find_by(admin_id: params[:admin_id])
   end
 end

@@ -1,5 +1,6 @@
 class AppliesController < ApplicationController
   def index
+    # @applies = current_user.Apply.all
     @applies = Apply.where(admin_id: params[:admin_id])
   end
 

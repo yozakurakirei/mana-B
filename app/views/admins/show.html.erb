@@ -1,6 +1,7 @@
 <div class="admin">
   <h1>受注詳細</h1>
   <button><%= link_to "編集", edit_admin_path(@admin) %></button>
+  作成者<%= @user.name %>
 
   <div class="grid_area">
     <div class="admin_company w-full">
@@ -25,7 +26,7 @@
       </div>
       <div class="apply_button mr-4">
         <% if @admin.user_belonging?(current_user) %>
-          <%= link_to '取り消す', admin_belongings_path(@admmin, @belongings), method: :delete, data: { confirm: "申請を取り消しますか？" } %>
+          <%= link_to '取り消す', admin_belonging_path(@admin, @belonging), method: :delete, data: { confirm: "申請を取り消しますか？" } %>
         <% elsif current_user %>
           <% if @apply %>
             <%= link_to '申請取り消し', admin_apply_path(@admin, @apply), method: :delete %>
@@ -35,9 +36,11 @@
           <% end %>
         <% end %>
       </div>
+      </div>
       <!-- 申請待ちリンク -->
       <% if current_user.admin? %>
         <%= link_to "承認待ちリスト", admin_applies_path(@admin), class: "btn btn-primary" %>
+        <%= link_to "承認待済リスト", admin_belongings_path(@admin), class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
