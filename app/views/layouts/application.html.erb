@@ -13,9 +13,7 @@
   <body>
     <!-- ログイン後のみヘッダーを表示 -->
     <%= render 'layouts/mana_header' if current_user %>
-    <!-- flash message -->
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= render 'layouts/secound_header' if current_user %>
     <div>
       <div class="min-h-screen">
         <%= yield %>

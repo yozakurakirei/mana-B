@@ -54,6 +54,6 @@ class AdminsController < ApplicationController
                                     :finish_time, :salary_kinds,
         report_attributes: [:report_id, :days, :times, :c_costs, :shotei, :choka, :remark,
                              :_destroy, :id],
-        condition_attributes: [:holiday, :shift_start, :shift_finish, :w_hours, :w_rest, :w_total, :over, :test_period, :_destroy, :id ])
+        condition_attributes: [:holiday, :shift_start, :shift_finish, :w_hours, :w_rest, :w_total, :over, :test_period, :_destroy, :id ]).merge(user_id: current_user.id, user_name: current_user.name)
     end
 end
