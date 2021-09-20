@@ -8,6 +8,15 @@
     <%= form_with(model: @admin) do |f| %>
     <div class="admin_area">
 
+    <div class="admin_button2 w-full flex items-center justify-center">
+      <div class="mr-4 w-1/6">
+        <%= f.submit "保存" , data: { confirm: "保存しますか？" } ,class: "w-full bg-gradient-to-r from-green-400 to-green-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+      </div>
+      <div class="w-1/6 bg-gradient-to-r from-green-400 to-green-600 hover:bg-teal-700 rounded p-2 text-center">
+        <%= link_to "戻る", "javascript:history.back()" , data: { confirm: "戻りますか？" } ,class: "w-full text-center text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+      </div>
+    </div>
+
     <!-- 会社 -->
     <div class="w-full bg-white admin_input bg-white shadow-sm mr-4 border p-0">
       <div class="w-full flex items-center admin_hd p-2">
@@ -118,6 +127,10 @@
       <!-- 勤務報告 -->
       <div class="admin_houkoku w-full">
         <%= render 'admins/input/houkoku' %>
+      </div>
+
+      <!-- 勤務報告 -->
+      <div class="admin_houkoku2 w-full">
         <%= render 'admins/input/houkoku' %>
       </div>
       <!-- 勤怠条件 -->
@@ -172,26 +185,43 @@
             <%= c.number_field :w_total, class: "p-2 w-14 text-sm border" %>　時間
           </div>
         </div>
-        <div class="attend_area flex items-center">
+        <div class="attend_area flex items-center w-full mb-4">
           <div class="flex items-center mr-4">
-            <%= c.label "試用期間", class: "text-sm" %>
-            <%= c.select :test_period, {"有": "有", "無": "無"}, class: "text-sm" %>
+            <div class="mr-2">
+              <%= c.label "試用期間", class: "text-sm" %>
+            </div>
+            <div class="border">
+              <%= c.select :test_period, {"有": "有", "無": "無"}, {}, {class: "p-2 text-sm"} %>
+            </div>
           </div>
           <div class="flex items-center mr-4">
-            <%= c.label "休日", class:"text-sm" %>
-            <%= c.text_field :holiday, class:"text-sm" %>
+            <div class="mr-2">
+              <%= c.label "休日", class:"text-sm" %>
+            </div>
+            <div class="border">
+              <%= c.text_field :holiday, class:"text-sm p-2" %>
+            </div>
           </div>
           <div class="flex items-center mr-4">
-            <%= c.label "所定外労働時間", class:"text-sm" %>
-            <%= c.select :over, {"有": "有", "無": "無"}, class:"text-sm" %>
+            <div class="mr-2">
+              <%= c.label "試用期間", class: "text-sm" %>
+            </div>
+            <div class="border">
+              <%= c.select :over, {"有": "有", "無": "無"}, {}, {class:"p-2 text-sm"} %>
+            </div>
           </div>
         </div>
         <% end %>
       </div>
+      
 
-      <div class="admin_button">
-        <%= f.submit "保存" , data: { confirm: "保存しますか？" } ,class: "bg-gradient-to-r from-green-400 to-green-600 ... hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
-        <%= link_to "戻る", "javascript:history.back()" , data: { confirm: "戻りますか？" } ,class: "bg-gradient-to-r from-green-400 to-green-600 ... hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+      <div class="admin_button w-full flex items-center justify-end">
+        <div class="mr-4 w-1/4">
+          <%= f.submit "保存" , data: { confirm: "保存しますか？" } ,class: "w-full bg-gradient-to-r from-green-400 to-green-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+        </div>
+        <div class="w-1/4 bg-gradient-to-r from-green-400 to-green-600 hover:bg-teal-700 rounded p-2 text-center">
+          <%= link_to "戻る", "javascript:history.back()" , data: { confirm: "戻りますか？" } ,class: "w-full text-center text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+        </div>
       </div>
     <% end %>
     </div>

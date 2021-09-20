@@ -34,9 +34,10 @@
     display: grid;
     gap: 1.2rem;
     grid-template-areas: 
+      "button2 button2"
       "input condition"
       "attend attend"
-      "houkoku houkoku"
+      "houkoku1 houkoku2"
       "button button";
       @media (max-width: 760px) {
         width: 100%;
@@ -67,7 +68,7 @@
     }
     .admin_houkoku {
       padding: 1rem;
-      grid-area: houkoku;
+      grid-area: houkoku1;
       .houkoku_input {
         margin: 1rem;
         th {
@@ -75,12 +76,27 @@
         }
       }
     }
+    .admin_houkoku2 {
+      padding: 1rem;
+      grid-area: houkoku2;
+      .houkoku_input {
+        margin: 1rem;
+        th {
+          margin: 1rem;
+        }
+      }
+    }
+
     .admin_attend {
       padding: 1rem;
       grid-area: attend;
     }
     .admin_button {
       grid-area: button;
+    }
+    .admin_button2 {
+      width: 100%;
+      grid-area: button2;
     }
   }
   .admin_field {
