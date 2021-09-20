@@ -29,13 +29,15 @@
 .admin_new {
   background-color: #f8f7f6;
   .admin_area  {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
     display: grid;
-    gap: .5rem;
+    gap: 1.2rem;
     grid-template-areas: 
-      "input condition houkoku"
-      "attend attend houkoku"
-      "button button button";
+      "input condition"
+      "attend attend"
+      "houkoku houkoku"
+      "button button";
       @media (max-width: 760px) {
         width: 100%;
         grid-template-areas:
@@ -50,7 +52,7 @@
         "button";
         grid-template-columns: 1fr;
       }
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     .admin_input {
       padding: 1rem;
       grid-area: input;

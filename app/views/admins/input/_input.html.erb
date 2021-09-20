@@ -9,7 +9,7 @@
     <div class="admin_area">
 
     <!-- 会社 -->
-    <div class="bg-white admin_input bg-gray-100 shadow-sm mr-4 border p-0">
+    <div class="w-full bg-white admin_input bg-white shadow-sm mr-4 border p-0">
       <div class="w-full flex items-center admin_hd p-2">
         <i class="fas fa-building text-2xl mr-2"></i>
         <h3 class="text-base font-bold text-gray-700">会社名を選択してください</h3>
@@ -64,7 +64,7 @@
     </div>
 
     <!-- staff + condition -->
-    <div class="bg-white admin_condition bg-gray-100 shadow-sm mr-4 border-2 p-0">
+    <div class="bg-white admin_condition bg-gray-100 shadow-sm border-2 p-0">
 
       <div class="w-full flex items-center admin_hd p-2">
         <i class="far fa-meh-blank mr-2 text-2xl"></i>
@@ -117,47 +117,11 @@
 
       <!-- 勤務報告 -->
       <div class="admin_houkoku w-full">
-        <div class="w-full flex items-center mb-6">
-          <i class="far fa-calendar-check text-2xl mr-2"></i>
-          <h3>勤務報告</h3>
-        </div>
-        <%= f.fields_for :report do |r| %>
-          <div class="flex items-center mb-3 w-full">
-            <div class="w-1/3">
-              <%= r.label "勤務日数", class: "block text-sm text-left text-gray-500 font-bold mb-1 pr-4" %>
-            </div>
-            <div class="w-2/3">
-                <%= r.number_field :days, class: "border-2 text-sm border-gray-200 rounded w-full py-1 px-1 text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" %>
-            </div>
-          </div>
-          <div class="flex items-center mb-3 w-full">
-            <div class="w-1/3">
-              <%= r.label "勤務時間", class: "block text-left text-sm text-gray-500 font-bold mb-1 pr-4" %>
-            </div>
-            <div class="w-2/3">
-                <%= r.number_field :times, class: "border-2 text-sm border-gray-200 rounded w-full py-1 px-1 text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" %>
-            </div>
-          </div>
-          <div class="flex items-center mb-3 w-full">
-            <div class="w-1/3">
-              <%= r.label "交通費", class: "block text-left text-sm text-gray-500 font-bold mb-1 pr-4" %>
-            </div>
-            <div class="w-2/3">
-                <%= r.number_field :c_costs, class: "border-2 text-sm border-gray-200 rounded w-full py-1 px-1 text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" %>
-            </div>
-          </div>
-          <div class="flex items-center mb-3 w-full">
-            <div class="w-1/3">
-              <%= r.label "備考", class: "block text-left text-sm text-gray-500 font-bold mb-1 pr-4" %>
-            </div>
-            <div class="w-2/3">
-                <%= r.text_area :remark, class: "h-40 border-2 text-sm border-gray-200 rounded py-1 px-1 text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" %>
-            </div>
-          </div>
-        <% end %>
+        <%= render 'admins/input/houkoku' %>
+        <%= render 'admins/input/houkoku' %>
       </div>
       <!-- 勤怠条件 -->
-      <div class="admin_attend w-full bg-gray-100 shadow-md my-2 border-2">
+      <div class="admin_attend w-full bg-white shadow-md border-2">
         <div class="w-full mb-2">
         <h3>就業条件詳細</h3>
         </div>
@@ -194,18 +158,18 @@
             </div>
           </div>
         </div>
-        <div class="attend_area flex items-center mb-4">
-          <div class="flex mr-4 w-38">
-            <%= c.label "実働時間", class:"text-sm" %>
-            <%= c.number_field :w_hours, class:"text-sm" %>　時間
+        <div class="attend_area flex items-center w-full mb-4">
+          <div class="flex items-center mr-4 w-38">
+            <%= c.label "実働時間", class:"text-sm mr-2" %>
+            <%= c.number_field :w_hours, class:"p-2 w-14 text-sm border" %>　時間
           </div>
-          <div class="shift_start flex mr-4 w-38">
-            <%= c.label "休憩時間", class: "text-sm" %>
-            <%= c.number_field :w_rest, class:"text-sm" %>　時間
+          <div class="shift_start flex items-center mr-4 w-38">
+            <%= c.label "休憩時間", class: "text-sm mr-2" %>
+            <%= c.number_field :w_rest, class:"p-2 w-14 text-sm border" %>　時間
           </div>
-          <div class="shift_start flex mr-4 w-38">
-            <%= c.label "拘束時間", class: "text-sm" %>
-            <%= c.number_field :w_total, class: "text-sm" %>　時間
+          <div class="shift_start flex items-center mr-4 w-38">
+            <%= c.label "拘束時間", class: "text-sm mr-2" %>
+            <%= c.number_field :w_total, class: "p-2 w-14 text-sm border" %>　時間
           </div>
         </div>
         <div class="attend_area flex items-center">
