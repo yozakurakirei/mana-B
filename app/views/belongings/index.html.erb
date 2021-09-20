@@ -1,1 +1,30 @@
-<h2>承認済リスト</h2>
+<h2>承認済みリスト</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+      <th>受注ID</th>
+      <th>日程</th>
+      <th>クライアント名</th>
+      <th>場所</th>
+      <th>スタッフ名</th>
+      <th>申請者</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <% @belongings.each do |b| %>
+    <tbody>
+      <tr>
+        <td><%= b.admin_id %></td>
+        <td><%= b.admin.start %>〜<%= b.admin.finish %></td>
+        <td><%= b.admin.company.name %></td>
+        <td><%= b.admin.place %></td>
+        <td><%= b.admin.staff.name %></td>
+        <td><%= b.user.name %></td>
+      </tr>
+    </tbody>
+  <% end %>
+</table>
+
+
