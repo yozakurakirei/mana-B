@@ -38,6 +38,7 @@
       <!-- 申請待ちリンク -->
       <% if current_user.admin? %>
         <%= link_to "承認待ちリスト", admin_applies_path(@admin), class: "btn btn-primary" %>
+        <%= link_to "承認済リスト", admin_belongings_path(@admin), class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>

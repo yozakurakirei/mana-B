@@ -1,5 +1,9 @@
 class BelongingsController < ApplicationController
 
+  def index 
+    @belongings = Belonging.where(admin_id: params[:admin_id])
+  end
+
   def create
     @belonging = Belonging.create(admin_id: belonging_params[:admin_id],
                  user_id: belonging_params[:user_id])

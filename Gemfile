@@ -5,6 +5,7 @@ ruby '3.0.2'
 
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'pg', '~> 1.1'
+gem 'rails-i18n'
 
 # csv
 gem 'roo'

@@ -27,9 +27,9 @@
       <tr>
         <th class="w-2/5 border p-2">始業・就業時間</th>
         <td class="w-3/5 border p-2 flex">
-          <%= l @admin.condition.shift_start, format: :shift %>
+          <%= @admin.condition.shift_start %>
           <p>〜</p>
-          <%= l @admin.condition.shift_finish, format: :shift %>
+          <%= @admin.condition.shift_finish %>
         </td>
       </tr>
       <tr>
