@@ -19,13 +19,17 @@
         <li>交通費：<%= @admin.koutsuhi %>円</li>
       </ul>
     </div>
+    <!-- 申請ボタン -->
     <div class="admin_button flex items-center">
       <div class="back_button mr-4">
         <%= link_to "戻る", "javascript:history.back()" , data: { confirm: "戻りますか？" } ,class: "bg-gradient-to-r from-green-400 to-green-600 ... hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
       </div>
       <div class="apply_button mr-4">
         <% if @admin.user_belonging?(current_user) %>
-          <%= link_to '取り消す', admin_belongings_path(@admmin, @belongings), method: :delete, data: { confirm: "申請を取り消しますか？" } %>
+          <p>すでに申請済です</p>
+          <%= link_to '取り消す', admin_belongings_path(@admin, @belongings),
+              method: :delete, data: { confirm: "申請を取り消しますか？" },
+              class: "btn btn-primary" %>
         <% elsif current_user %>
           <% if @apply %>
             <%= link_to '申請取り消し', admin_apply_path(@admin, @apply), method: :delete %>
