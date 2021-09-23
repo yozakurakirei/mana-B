@@ -23,9 +23,9 @@
         <td><%= a.admin.staff.name %></td>
         <td>&nbsp<%= a.user.name %><br></td>
         <td>
-          <%= link_to '承認', admin_belongings_path(a.admin, user_id: a.user.id, apply_id: a.id), 
+          <%= link_to '承認', admin_approvals_path(a.admin, user_id: a.user.id, apply_id: a.id), 
                       method: :post,
-                      data: { confirm: "#{a.admin_id}の申請を承認しますか？" } %>
+                      data: { confirm: "ID:#{a.admin_id}の申請を承認しますか？" } %>
         </td>
         <td>
           <%= link_to '否決', admin_apply_path(a.admin, a), method: :delete %>

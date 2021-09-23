@@ -20,6 +20,6 @@ class AppliesController < ApplicationController
   private
     
     def apply_params
-      params.permit(:admin_id)
+      params.permit(:admin_id, :user_id)
     end
 end

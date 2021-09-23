@@ -3,7 +3,9 @@
 one:
   user: one
   admin: one
+  apply_id: 1
 
 two:
   user: two
   admin: two
+  apply_id: 1
