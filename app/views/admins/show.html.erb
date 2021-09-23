@@ -26,9 +26,9 @@
       </div>
       <div class="apply_button mr-4">
         <!-- 承認済かどうか？ -->
-        <% if @admin.user_belonging?(current_user) %>
+        <% if @admin.user_approval?(current_user) %>
           <p>すでに申請済です</p>
-          <%= link_to '取り消す', admin_belongings_path(@admin, @belongings),
+          <%= link_to '取り消す', admin_approval_path(@admin, @approval),
               method: :delete, data: { confirm: "申請を取り消しますか？" },
               class: "btn btn-primary" %>
         <!-- current_user で未申請 -->
@@ -44,7 +44,7 @@
       <!-- 申請待ちリンク -->
       <% if current_user.admin? %>
         <%= link_to "承認待ちリスト", admin_applies_path(@admin), class: "btn btn-primary" %>
-        <%= link_to "承認済リスト", admin_belongings_path(@admin), class: "btn btn-primary" %>
+        <%= link_to "承認済リスト", admin_approvals_path(@admin), class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>

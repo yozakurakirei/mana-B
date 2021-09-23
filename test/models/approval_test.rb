@@ -1,6 +1,6 @@
 require "test_helper"
 
-class BelongingTest < ActiveSupport::TestCase
+class ApprovalTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
