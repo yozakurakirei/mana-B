@@ -1,6 +1,20 @@
 <div class="admin">
-  <h1>受注詳細</h1>
-  <button><%= link_to "編集", edit_admin_path(@admin) %></button>
+  <div class="text-center font-bold">
+    <h1>受注詳細</h1>
+  </div>
+  <div class="flex items-center m-4 justify-between">
+    <div class="btn btn-primary mr-4">
+      <%= link_to "編集", edit_admin_path(@admin), class:"text-white" %>
+    </div>
+    <div class="flex flex-col items-center justify-end">
+      <% if @admin.user_approval?(current_user) %>
+        <p><%= @admin.user_name %>さんが作成</p>
+        <p><%= @admin.updated_at %>に更新</p>
+      <% else %>
+        <p>申請中です</p>
+      <% end %>
+    </div>
+  </div>
 
   <div class="grid_area">
     <div class="admin_company w-full">
@@ -11,23 +25,12 @@
       <%= render 'admins/koyoujouken/staff' %>
     </div>
     
-    <div class="admin_condition w-full">
-      <h2>勤務条件</h2>
-      <ul>
-        <li>就業場所： <%= @admin.place %></li>
-        <li>給与：<%= @admin.salary %>円</li>
-        <li>交通費：<%= @admin.koutsuhi %>円</li>
-      </ul>
-    </div>
     <!-- 申請ボタン -->
-    <div class="admin_button flex items-center">
-      <div class="back_button mr-4">
-        <%= link_to "戻る", "javascript:history.back()" , data: { confirm: "戻りますか？" } ,class: "bg-gradient-to-r from-green-400 to-green-600 ... hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
-      </div>
-      <div class="apply_button mr-4">
+    <div class="w-full button-list flex items-center justify-center">
+      <div class="mr-4">
         <!-- 承認済かどうか？ -->
         <% if @admin.user_approval?(current_user) %>
-          <p>すでに承認済です</p>
+          <p class="btn btn-light">すでに承認済です</p>
         <!-- current_user で未申請 -->
         <% elsif current_user %> 
           <% if @apply %>
@@ -39,10 +42,19 @@
         <% end %>
       </div>
       <!-- 申請待ちリンク -->
-      <% if current_user.admin? %>
-        <%= link_to "承認待ちリスト", admin_applies_path(@admin), class: "btn btn-primary" %>
-        <%= link_to "承認済リスト", admin_approvals_path(@admin), class: "btn btn-primary" %>
-      <% end %>
+      <div class="button_list flex items-center m-4">
+        <% if current_user.admin? %>
+          <div class="#">
+            <%= link_to "承認待ちリスト", admin_applies_path(@admin), class: "btn btn-primary mr-4" %>
+          </div>
+          <div class="#">
+            <%= link_to "承認済リスト", approvals_path(@admin), class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="btn btn-success">
+        <%= link_to "戻る", "javascript:history.back()" , data: { confirm: "戻りますか？" }, class:"text-white" %>
+      </div>
     </div>
   </div>
 </div>

@@ -1,8 +1,10 @@
 <nav class="p-2 border-b-2 w-full">
   <ul class="flex items-center justify-center m-1">
     <li><%= link_to '承認待ち' %></li>｜
-    <li><%= link_to '承認済み' %></li>｜
-    <li><%= link_to '社員情報' %></li>｜
+    <li><%= link_to '承認済み', approvals_path %></li>｜
+    <% if current_user.admin? %>
+      <li><%= link_to '社員情報', administrator_employee_path %></li>｜
+    <% end %>
     <li><%= link_to '管理者権限' %></li>
   </ul>
   <ul class="flex items-center justify-center m-1">

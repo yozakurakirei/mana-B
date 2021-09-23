@@ -1,0 +1,31 @@
+<div class="m-4">
+  <div class="mb-4">  
+    <h2 class="font-bold">従業員リスト</h2>
+  </div>
+
+  <table class="table table-hover table-bordered">
+    <thead class="card-header text-center">
+      <tr>
+        <th>社員番号</th>
+        <th>氏名</th>
+        <th>フリガナ</th>
+        <th>役職</th>
+        <th>所属部署</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id%></td>
+        <td><%= user.name %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+
+</div>

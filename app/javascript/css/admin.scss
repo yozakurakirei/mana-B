@@ -7,7 +7,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
       "company staff"
-      "condition houkoku";
+      "button button";
     .admin_company {
       grid-area: company;
       justify-content: center;
@@ -16,11 +16,8 @@
       grid-area: staff;
       width: 100%;
     }
-    .admin_condition {
-      grid-area: condition;
-    }
-    .admin_hokoku {
-      grid-area: houkoku;
+    .button-list {
+      grid-area: button;
     }
   }
 }
