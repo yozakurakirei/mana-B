@@ -3,9 +3,11 @@ class AppliesController < ApplicationController
     @applies = Apply.where(admin_id: params[:admin_id])
   end
 
+  # 申請
   def create
     current_user.applies.create(admin_id: apply_params[:admin_id])
-    redirect_to admin_url(apply_params[:admin_id]), notice: "申請を提出しました"
+    redirect_to admin_url(apply_params[:admin_id]),
+                          data: { confirm: "申請を提出しました" }
   end
 
   def destroy
