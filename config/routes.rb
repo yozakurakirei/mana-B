@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'administrator/index'
+  get 'administrator/employee'
 
   resources :companies do
     collection { post :import }
@@ -13,11 +14,11 @@ Rails.application.routes.draw do
   resources :admins do
     # 承認待ち
     resources :applies, only: %i[index create destroy]
-    # 承認一覧
-    resources :approvals, only: %i[index create destroy]
   end
   resources :conditions
-
+  
+  # 承認一覧
+  resources :approvals, only: %i[index create destroy]
 
   
   devise_scope :user do
