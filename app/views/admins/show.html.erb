@@ -27,15 +27,12 @@
       <div class="apply_button mr-4">
         <!-- 承認済かどうか？ -->
         <% if @admin.user_approval?(current_user) %>
-          <p>すでに申請済です</p>
-          <%= link_to '取り消す', admin_approval_path(@admin, @approval),
-              method: :delete, data: { confirm: "申請を取り消しますか？" },
-              class: "btn btn-primary" %>
+          <p>すでに承認済です</p>
         <!-- current_user で未申請 -->
-        <% elsif current_user %>
+        <% elsif current_user %> 
           <% if @apply %>
             <%= link_to '申請取り消し', admin_apply_path(@admin, @apply), method: :delete %>
-          <% else %> 
+          <% else %>
             <%= link_to '申請', admin_applies_path(@admin), method: :post,
                 data: { confirm: "#{@admin.company.name}の申請を提出しますか？" },class: "bg-gradient-to-r from-green-400 to-green-600 ... hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %> 
           <% end %>

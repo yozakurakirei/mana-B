@@ -11,12 +11,14 @@ Rails.application.routes.draw do
   end
   
   resources :admins do
+    # 承認待ち
     resources :applies, only: %i[index create destroy]
+    # 承認一覧
+    resources :approvals, only: %i[index create destroy]
   end
   resources :conditions
 
-  # 承認一覧
-  resources :approvals, only: %i[index create destroy]
+
   
   devise_scope :user do
     root 'users/sessions#new'

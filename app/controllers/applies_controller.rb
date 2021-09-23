@@ -1,13 +1,16 @@
 class AppliesController < ApplicationController
   def index
-    @applies = Apply.where(admin_id: params[:admin_id])
+    @applies = Apply.includes(:admin).all
+    @apply = Approval.exists?
+  end
+
+  def new
   end
 
   # 申請
   def create
-    current_user.applies.create(admin_id: apply_params[:admin_id])
-    redirect_to admin_url(apply_params[:admin_id]),
-                          data: { confirm: "申請を提出しました" }
+    @apply = current_user.applies.create(admin_id: apply_params[:admin_id])
+    redirect_to admin_url(apply_params[:admin_id])
   end
 
   def destroy

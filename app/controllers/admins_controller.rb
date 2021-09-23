@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
   def index
-    @admins = Admin.includes(:company, :staff, :approvals).all
+    @admins = Admin.includes(:company, :staff, :applies, :approvals).all
   end
   
   def new
@@ -23,6 +23,7 @@ class AdminsController < ApplicationController
 
   def show
     @admin = Admin.find(params[:id])
+    # @apply = Apply.where(params[:admin_id]).exists?
   end
 
   def edit
