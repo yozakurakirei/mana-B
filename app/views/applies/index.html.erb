@@ -8,7 +8,7 @@
       <th>クライアント名</th>
       <th>場所</th>
       <th>スタッフ名</th>
-      <th>申請者</th>
+      <th>承認者</th>
       <th></th>
       <th></th>
     </tr>
@@ -21,14 +21,16 @@
         <td><%= a.admin.company.name %></td>
         <td><%= a.admin.place %></td>
         <td><%= a.admin.staff.name %></td>
-        <td>&nbsp<%= a.user.name %><br></td>
+        <td><%= a.user.name %><br></td>
         <td>
-          <%= link_to '承認', admin_approvals_path(a.admin, user_id: a.user.id, apply_id: a.id), 
-                      method: :post,
-                      data: { confirm: "ID:#{a.admin_id}の申請を承認しますか？" } %>
-        </td>
-        <td>
-          <%= link_to '否決', admin_apply_path(a.admin, a), method: :delete %>
+          <% if @apply %>
+            <p>承認済です</p>
+          <% else %>
+            <%= link_to '承認', admin_approvals_path(a.admin, user_id: a.user.id, apply_id: a.id), 
+                        method: :post,
+                        data: { confirm: "ID:#{a.admin_id}の申請を承認しますか？" } %>
+            <%= link_to '否決', admin_apply_path(a.admin, a), method: :delete %>
+          <% end %>
         </td>
       </tr>
     </tbody>

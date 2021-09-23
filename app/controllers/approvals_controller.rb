@@ -1,18 +1,18 @@
 class ApprovalsController < ApplicationController
   def index
-    @approvals = Approval.includes(:admin).all
+    @approvals = Approval.includes(:admin, :user).all
   end
 
   def create
-    @approval = Approval.new(approval_params)
+    @approval = current_user.approvals.create(admin_id: approval_params[:admin_id], user_id: approval_params[:user_id])
+    redirect_to admin_applies_url(@approval.admin)
+  end
 
-    if @approval.save
-      flash[:success] = "申請が完了しました"
-      redirect_to admin_applies_path
-    else
-      flash.now[:alert] = "申請ができませんでした"
-      redirect_to admin_applies_path
-    end
+  def destroy
+    @approval = Approval.find(params[:id])
+    @approval.destroy
+    @admin = Admin.find(params[:admin_id])
+    redirect_to admin_url(@admin), data: { confirm: "申請を取り下げました" }
   end
 
   private

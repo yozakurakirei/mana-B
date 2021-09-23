@@ -58,15 +58,6 @@ ActiveRecord::Schema.define(version: 2021_09_23_052809) do
     t.index ["user_id"], name: "index_approvals_on_user_id"
   end
 
-  create_table "belongings", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "admin_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["admin_id"], name: "index_belongings_on_admin_id"
-    t.index ["user_id"], name: "index_belongings_on_user_id"
-  end
-
   create_table "branches", force: :cascade do |t|
     t.string "name"
     t.string "department"
@@ -168,7 +159,5 @@ ActiveRecord::Schema.define(version: 2021_09_23_052809) do
   add_foreign_key "applies", "users"
   add_foreign_key "approvals", "admins"
   add_foreign_key "approvals", "users"
-  add_foreign_key "belongings", "admins"
-  add_foreign_key "belongings", "users"
   add_foreign_key "branches", "users"
 end

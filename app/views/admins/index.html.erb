@@ -22,6 +22,7 @@
             <th>交通費</th>
             <th>ID</th>
             <th>作成者</th>
+            <th>承認ステータス</th>
             <th></th>
             <th></th>
           </tr>
@@ -42,6 +43,13 @@
               <td><%= a.koutsuhi %>円</td> 
               <td><%= a.user_id %></td>
               <td><%= a.user_name %></td>
+              <td>
+                <% if a.user_approval?(current_user) %>
+                  <p>承認済</p>
+                <% else %>
+                  <p>申請中</p>
+                <% end %>
+              </td>
               <td><%= link_to "雇用条件書", admin_path(a) %></td>
               <td><%= link_to "削除", admin_path(a), method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
             </tr>
