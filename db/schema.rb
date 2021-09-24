@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_23_052809) do
+ActiveRecord::Schema.define(version: 2021_09_24_162517) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,17 @@ ActiveRecord::Schema.define(version: 2021_09_23_052809) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
     t.string "user_name"
+    t.string "manager", comment: "担当者"
+    t.string "tel1", comment: "電話番号1"
+    t.string "tel2", comment: "電話番号2"
+    t.string "fax", comment: "FAX"
+    t.string "mana_user", comment: "担当営業"
+    t.integer "employment", comment: "雇用形態"
+    t.integer "label", comment: "ラベル"
+    t.string "decision", comment: "スタッフ決定日"
+    t.string "report_day", comment: "スタッフ報告日"
+    t.string "detail", comment: "詳細連絡日"
+    t.string "completion", comment: "完了日"
     t.index ["company_id"], name: "index_admins_on_company_id"
     t.index ["condition_id"], name: "index_admins_on_condition_id"
     t.index ["report_id"], name: "index_admins_on_report_id"
