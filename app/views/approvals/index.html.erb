@@ -18,7 +18,9 @@
       <tr>
         <td><%= b.admin_id %></td>
         <td><%= b.admin.start %>〜<%= b.admin.finish %></td>
-        <td><%= b.admin.company.name %></td>
+        <%= link_to admin_path(b.admin.id) do %>
+          <td><%= b.admin.company.name %></td>
+        <% end %>
         <td><%= b.admin.place %></td>
         <td><%= b.admin.staff.name %></td>
         <td><%= b.admin.user_name %></td>

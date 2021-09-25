@@ -1,10 +1,12 @@
 class ApprovalsController < ApplicationController
   def index
     @approvals = Approval.includes(:admin, :user).all
+    # @admin = Admin.find(params[:admin_id])
   end
 
   def create
-    @approval = current_user.approvals.create(admin_id: approval_params[:admin_id], user_id: approval_params[:user_id])
+    @approval = Approval.create(admin_id: approval_params[:admin_id], user_id: approval_params[:user_id])
+    flash[:success] = "承認しました"
     redirect_to admin_applies_url(@approval.admin)
   end
 
