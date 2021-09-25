@@ -14,12 +14,15 @@ gem 'nokogiri'
 # 認証
 gem 'devise'
 
-# css
+# css,js
 gem 'tailwindcss-rails'
-
-gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
+
+# 検索
+gem 'ransack'
+
+gem 'puma', '~> 5.0'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'

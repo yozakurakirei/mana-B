@@ -1,5 +1,11 @@
-<div class="admin_new">
-  <div class="w-full p-2 flex items-center flex-col">
+<div class="admin_new flex flex-col px-10 py-3">
+  <!-- search -->
+  <div class="search_area mb-3 border-2 card">
+    <!-- 検索エリア -->
+    <%= render 'admins/search/admin_search' %>
+  </div>
+  <!-- 検索結果 受注テーブル -->
+  <div class="w-full flex items-center flex-col bg-gray-100">
     <div class="w-full flex items-center justify-between">
       <div class="font-bold">
         <h1>受注一覧</h1>
@@ -10,7 +16,7 @@
     </div>
 
     <div class="w-full table-responsive">
-      <table id="admin_table" class="table_sticky table-hover table table-striped table-bordered text-nowrap">
+      <table id="admin_table" class="border table_sticky table-hover table table-striped table-bordered text-nowrap">
         <thead>
           <tr>
             <th>会社名</th>
@@ -28,7 +34,7 @@
           </tr>
         </thead>
         <tbody>
-          <% @admins.each do |a| %>
+          <% @admin_result.each do |a| %>
             <tr>
               <td>
                 <%= link_to edit_admin_path(a) do %>

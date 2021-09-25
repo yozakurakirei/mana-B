@@ -12,7 +12,7 @@
         <div class="record_area flex items-center mr-10 w-2/3 h-full p-1 border-b-2">
           <div class="flex items-center flex-col mr-2 w-1/6">
             <%= f.label "雇用形態" %>
-            <%= f.text_field :employment, class: "w-full border text-center text-xl p-1" %>
+            <%= f.select :employment, { "紹介": "紹介", "派遣": "派遣" }, {selected: 1}, {class: "w-full font-bold border text-center text-xl p-1.5"} %>
           </div>
           <div class="flex items-center flex-col mr-2 w-1/6">
             <%= f.label "ラベル" %>
