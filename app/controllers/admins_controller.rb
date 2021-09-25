@@ -1,6 +1,8 @@
 class AdminsController < ApplicationController
   def index
-    @admins = Admin.includes(:company, :staff, :applies, :approvals).all
+    @admins = Admin.includes(:company, :staff, :applies, :approvals).all.order("created_at desc")
+    @q = Admin.ransack(params[:q])
+    @admin_result = @q.result(distinct: true).includes(:company, :staff, :users).order("created_at desc")
   end
   
   def new
@@ -53,6 +55,9 @@ class AdminsController < ApplicationController
                                     :place_remarks, :salary, :koutsuhi, :staff_id,
                                     :start, :finish, :first_shift, :start_time,
                                     :finish_time, :salary_kinds,
+                                    :manager, :tel1, :tel2, :fax, :mana_user,
+                                    :employment, :label, :decision, :report_day,
+                                    :detail, :completion,
         report_attributes: [:report_id, :days, :times, :c_costs, :shotei, :choka, :remark,
                              :_destroy, :id],
         condition_attributes: [:holiday, :shift_start, :shift_finish, :w_hours, :w_rest, :w_total, :over, :test_period, :_destroy, :id ]).merge(user_id: current_user.id, user_name: current_user.name)

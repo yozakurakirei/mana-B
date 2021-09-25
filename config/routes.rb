@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   resources :admins do
     # 承認待ち
     resources :applies, only: %i[index create destroy]
+    # 検索
+    collection do 
+      get 'search'
+    end
   end
   resources :conditions
   
