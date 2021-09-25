@@ -10,6 +10,7 @@ class AppliesController < ApplicationController
   # 申請
   def create
     @apply = current_user.applies.create(admin_id: apply_params[:admin_id])
+    flash[:success] = "申請をしました" 
     redirect_to admin_url(apply_params[:admin_id])
   end
 

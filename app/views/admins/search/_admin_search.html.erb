@@ -1,11 +1,26 @@
-<div class="card-header">
-  <h2>検索エリア</h2>
-</div>
-<div class="p-3">
+<div class="w-full">
+  <div class="card-header search_head w-full">
+    <h2>検索エリア</h2>
+  </div>
   <%= search_form_for @q do |f| %>
-    <%= f.label :company_name, "場所で検索" %>
-    <%= f.search_field :company_name_cont %>
-
-    <%= f.submit "検索", class: "btn btn-primary" %>
+    <div class="flex items-center w-full">
+      <div class="bg-gray-200 search_left flex flex-col p-2 w-1/2">
+        <div class="flex items-center">
+          <%= f.label :company_name, "会社名" %>
+          <%= f.search_field :company_name_cont, class: "border" %>
+        </div>
+        <div class="flex items-center">
+          <%= f.label :company_name_kana, "会社名フリガナ" %>
+          <%= f.search_field :company_name_kana_cont %>
+        </div>
+      </div>
+      <div class="bg-gray-100 search_center p-2 w-1/2">
+        <%= f.label :staff_name, "スタッフ名" %>
+        <%= f.search_field :staff_name_cont %>
+      </div>
+    </div>
+    <div class="search_button bg-gray-300">
+      <%= f.submit "検索", class: "btn btn-primary" %>
+    </div>
   <% end %>
 </div>
