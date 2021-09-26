@@ -1,2 +1,1 @@
-<h1>編集ページ</h1>
-<%= render 'companies/input/input' %>
+<%= render 'companies/input/input' if current_user.admin? %>

@@ -1,34 +1,65 @@
-<%= form_with(model: @company, local: true) do |f| %>
-  <%= f.label :name, "会社名" %>
-  <%= f.text_field :name %>
+<div class="w-full flex items-center flex-col justify-center">
+  <div class="w-full text-center m-4 font-bold">
+    <h2>クライアント登録</h2>
+  </div>
+  <div class="w-10/12 p-6 flex imtes-center rounded border bg-white">
+    <!-- 左側 基本情報 -->
+    <div class="w-1/2 mr-6 border-2 border-gray-300 shadow-md">
+      <div class="card-header border-2">基本情報</div>
+      <%= form_with(model: @company, local: true) do |f| %>
+      <div class="w-full flex items-center flex-col p-4">
+        <div class="w-full flex items-center mb-3">
+          <%= f.label :name, "会社名", class:"w-1/6 block text-sm text-left text-gray-500 font-bold mb-1 pr-4" %>
+          <%= f.text_field :name, class: "w-5/6 border-2 border-gray-200 text-sm rounded py-1 px-1 text-gray-900" %>
+        </div>
 
-  <%= f.label :name_kana, "会社名" %>
-  <%= f.text_field :name_kana %>
+        <div class="w-full flex items-center mb-3">
+          <%= f.label :name_kana, "フリガナ", class:"w-1/6 block text-sm text-left text-gray-500 font-bold mb-1 pr-4" %>
+          <%= f.text_field :name_kana, class: "w-5/6 border-2 border-gray-200 text-sm rounded py-1 px-1 text-gray-900", class: "w-5/6 border-2 border-gray-200 text-sm rounded py-1 px-1 text-gray-900" %>
+        </div>
 
-  <%= f.label :product, "商品" %>
-  <%= f.text_field :product %>
+        <div class="w-full flex items-center mb-3">
+          <%= f.label :product, "商品", class:"w-1/6 block text-sm text-left text-gray-500 font-bold mb-1 pr-4" %>
+          <%= f.text_field :product, class: "w-5/6 border-2 border-gray-200 text-sm rounded py-1 px-1 text-gray-900" %>
+        </div>
 
-  <%= f.label :brand, "ブランド" %>
-  <%= f.text_field :brand %>
+        <div class="w-full flex items-center mb-3">
+          <%= f.label :brand, "ブランド", class:"w-1/6 block text-sm text-left text-gray-500 font-bold mb-1 pr-4" %>
+          <%= f.text_field :brand, class: "w-5/6 border-2 border-gray-200 text-sm rounded py-1 px-1 text-gray-900" %>
+        </div>
+      </div>
+    </div>
 
-  <%= f.label :fee, "手数料率" %>
-  <%= f.text_field :fee %>
+    <!-- 右側 就業条件 -->
+    <div class="w-1/2 border-2 border-gray-300 shadow-md">
+      <div class="card-header">就業条件</div>
+        <div class="w-full flex items-center flex-col p-4">
+          <div class="w-full flex items-center mb-3">
+            <%= f.label :fee, "手数料率", class:"w-28 block text-sm text-left text-gray-500 font-bold mb-1 pr-4" %>
+            <%= f.text_field :fee, class: "border-2 border-gray-200 text-sm rounded py-1 px-1 text-gray-900" %>　%
+          </div>
+          <div class="w-full flex items-center mb-3">
+            <%= f.label :o_fee, "事務手数料", class:"w-28 block text-sm text-left text-gray-500 font-bold mb-1 pr-4" %>
+            <%= f.text_field :o_fee, class: "border-2 border-gray-200 text-sm rounded py-1 px-1 text-gray-900" %>
+          </div>
+          <div class="w-full flex items-center mb-3">
+            <%= f.label "給与支払日", class:"w-28 block text-sm text-left text-gray-500 font-bold mb-1 pr-4" %>
+            <div class="flex items-center reset_button mb-2">
+              <%= f.text_field :closing, class:"py-1 px-2 w-16 mr-3 border-2 border-gray-300 bg-gray-100 rounded" %>
+              <p class="mr-3">日締め</p>
+              <%= f.text_field :after, class:"py-1 px-2 w-16 mr-3 border-2 border-gray-300 bg-gray-100 rounded" %>
+              <p class="mr-3">ヶ月後</p>
+              <%= f.text_field :payment, class:"py-1 px-2 w-16 mr-3 border-2 border-gray-300 bg-gray-100 rounded" %>
+              <p>日払い</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="mt-4 flex items-center justify-center">
+      <%= f.submit "登録", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
 
-  <%= f.label :o_fee, "事務手数料" %>
-  <%= f.text_field :o_fee %>
-
-  <%= f.label :closing, "締日" %>
-  <%= f.text_field :closing %>
-
-  <%= f.label "振込日" %>
-  <%= f.text_field :after %>ヶ月後
-  <%= f.text_field :payment %>日
-
-  <%= f.label :person, "担当者" %>
-  <%= f.text_field :person %>
-
-  <%= f.label :remarks, "備考" %>
-  <%= f.text_area :remarks %>
-
-  <%= f.submit "登録" %>
-<% end %>
