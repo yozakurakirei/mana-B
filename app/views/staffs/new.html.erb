@@ -1,15 +1,6 @@
-<h1>スタッフ新規登録</h1>
+<div class="w-full p-4 flex items-center flex-col">
+  <h2 class="font-bold text-center mb-4">スタッフ新規登録</h2>
+  <%= render 'staffs/input/input' %>
+</div>
 
 
-<%= form_with(model: @staff, local: true) do |f| %>
-  <%= f.label :name, "氏名" %>
-  <%= f.text_field :name %>
-
-  <%= f.label :name_kanak, "フリガナ" %>
-  <%= f.text_field :name_kanak %>
-
-  <%= f.label :remarks, "スタッフ備考" %>
-  <%= f.text_area :remarks %>
-
-  <%= f.submit "登録" %>
-<% end %>
