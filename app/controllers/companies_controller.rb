@@ -33,6 +33,7 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:id])
     if @company.update(company_params)
       flash[:success] = "更新しました"
+      redirect_to companies_path
     else
       render 'edit'
     end

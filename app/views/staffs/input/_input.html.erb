@@ -1,0 +1,24 @@
+<div class="w-8/12 p-6 flex imtes-center rounded border bg-white">
+  <div class="w-full flex-col">
+  <%= form_with(model: @staff, local: true) do |f| %>
+    <div class="w-full flex items-center mb-3">
+      <%= f.label :name, "氏名", class:"w-2/12 block text-sm text-left text-gray-500 font-bold mb-1 pr-4" %>
+      <%= f.text_field :name, class:"w-10/12 border-2 bg-gray-100 border-gray-300 rounded py-1 px-1 text-gray-900" %>
+    </div>
+
+    <div class="w-full flex items-center mb-3">
+      <%= f.label :name_kanak, "フリガナ", class: "w-2/12 block text-sm text-left text-gray-500 font-bold mb-1 pr-4" %>
+      <%= f.text_field :name_kanak, class: "w-10/12 border-2 bg-gray-100 border-gray-300 rounded py-1 px-1 text-gray-900" %>
+    </div>
+
+    <div class="w-full flex items-center mb-3">
+      <%= f.label :remarks, "スタッフ備考", class: "w-2/12 block text-sm text-left text-gray-500 font-bold mb-1 pr-4" %>
+      <%= f.text_area :remarks, class: "w-10/12 border-2 bg-gray-100 border-gray-300 rounded py-1 px-1 text-gray-900" %>
+    </div>
+
+    <div class="mt-4 flex items-center justify-center">
+      <%= f.submit "登録", class: "btn btn-primary font-bold px-6" %>
+    </div>
+  <% end %>
+  </div>
+</div>

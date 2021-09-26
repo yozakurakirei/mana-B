@@ -40,13 +40,19 @@
       <tbody>
         <% @companies.each do |c| %>
           <tr>
-            <td><%= c.name %></td>
+            <td>
+              <%= link_to company_path(c) do %>
+                <%= c.name %>
+              <% end %>
+            </td>
             <td><%= c.name_kana %></td>
             <td><%= c.product %></td>
             <td><%= c.brand %></td>
             <td><%= link_to "詳細", company_path(c) %></td>
-            <td><%= link_to "編集", edit_company_path(c) %></td>
-            <td><%= link_to "削除", company_path(c), method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+            <% if current_user.admin? %>
+              <td><%= link_to "編集", edit_company_path(c)%></td>
+              <td><%= link_to "削除", company_path(c), method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+            <% end %>
           </tr>
         <% end %>
       </tbody>

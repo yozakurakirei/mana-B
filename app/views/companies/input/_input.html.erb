@@ -27,6 +27,31 @@
           <%= f.label :brand, "ブランド", class:"w-1/6 block text-sm text-left text-gray-500 font-bold mb-1 pr-4" %>
           <%= f.text_field :brand, class: "w-5/6 border-2 border-gray-200 text-sm rounded py-1 px-1 text-gray-900" %>
         </div>
+
+        <div class="w-full flex items-center mb-3">
+          <%= f.label :person, "担当者", class:"w-1/6 block text-sm text-left text-gray-500 font-bold mb-1 pr-4" %>
+          <%= f.text_field :person, class: "w-5/6 border-2 border-gray-200 text-sm rounded py-1 px-1 text-gray-900" %>
+        </div>
+        <div class="w-full flex items-center mb-3">
+          <%= f.label :person, "部署名", class:"w-1/6 block text-sm text-left text-gray-500 font-bold mb-1 pr-4" %>
+          <%= f.text_field :person, class: "w-5/6 border-2 border-gray-200 text-sm rounded py-1 px-1 text-gray-900" %>
+        </div>
+        <div class="w-full flex items-center mb-3">
+          <%= f.label :p_tel, "連絡先1", class:"w-1/6 block text-sm text-left text-gray-500 font-bold mb-1 pr-4" %>
+          <%= f.text_field :p_tel, class: "w-5/6 border-2 border-gray-200 text-sm rounded py-1 px-1 text-gray-900" %>
+        </div>
+        <div class="w-full flex items-center mb-3">
+          <%= f.label :p_tel2, "連絡先2", class:"w-1/6 block text-sm text-left text-gray-500 font-bold mb-1 pr-4" %>
+          <%= f.text_field :p_tel2, class: "w-5/6 border-2 border-gray-200 text-sm rounded py-1 px-1 text-gray-900" %>
+        </div>
+        <div class="w-full flex items-center mb-3">
+          <%= f.label :p_fax, "FAX", class:"w-1/6 block text-sm text-left text-gray-500 font-bold mb-1 pr-4" %>
+          <%= f.text_field :p_fax, class: "w-5/6 border-2 border-gray-200 text-sm rounded py-1 px-1 text-gray-900" %>
+        </div>
+        <div class="w-full flex items-center mb-3">
+          <%= f.label :p_email, "アドレス", class:"w-1/6 block text-sm text-left text-gray-500 font-bold mb-1 pr-4" %>
+          <%= f.text_field :p_email, class: "w-5/6 border-2 border-gray-200 text-sm rounded py-1 px-1 text-gray-900" %>
+        </div>
       </div>
     </div>
 
@@ -52,6 +77,10 @@
               <%= f.text_field :payment, class:"py-1 px-2 w-16 mr-3 border-2 border-gray-300 bg-gray-100 rounded" %>
               <p>日払い</p>
             </div>
+          </div>
+          <div class="w-full flex items-center mb-3">
+            <%= f.label :remarks, "備考", class:"w-28 block text-sm text-left text-gray-500 font-bold mb-1 pr-4" %>
+            <%= f.text_area :remarks, class: "w-full h-40 border-2 border-gray-200 text-sm rounded py-1 px-1 text-gray-900" %>
           </div>
         </div>
       </div>
