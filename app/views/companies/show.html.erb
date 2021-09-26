@@ -1,2 +1,11 @@
-<h1>Companies#show</h1>
-<p>Find me in app/views/companies/show.html.erb</p>
+<div class="company_area w-full">
+  <div class="company_info px-4 py-2 bg-gray-100">
+    <%= render 'companies/show/company' %>
+  </div>
+  <div class="company_staff px-4 py-2 bg-gray-200">
+    <%= render 'companies/show/staff' %>
+  </div>
+  <div class="company_button">
+    <p>なんらかのボタンが入ります。</p>
+  </div>
+</div>

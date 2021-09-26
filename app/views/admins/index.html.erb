@@ -17,12 +17,15 @@
 
     <div class="w-full table-responsive">
       <table id="admin_table" class="border table_sticky table-hover table table-striped table-bordered text-nowrap">
-        <thead>
+        <thead class="bg-green-400 text-white">
           <tr>
+            <th>締日</th>
+            <th>開始日</th>
+            <th>終了日</th>
             <th>会社名</th>
+            <th>場所</th>
             <th>商品</th>
             <th>ブランド</th>
-            <th>場所</th>
             <th>スタッフ名</th>
             <th>給与</th>
             <th>交通費</th>
@@ -36,14 +39,17 @@
         <tbody>
           <% @admin_result.each do |a| %>
             <tr>
-              <td>
+              <td><%= a.company.closing %></td>
+              <td><%= a.start %></td>
+              <td><%= a.finish %></td>
+              <td> 
                 <%= link_to edit_admin_path(a) do %>
-                <%= a.company.name %>
+                <%= a.company.name.truncate(15) %>
                 <% end %>
               </td> 
+              <td><%= a.place %></td> 
               <td><%= a.company.product %></td> 
               <td><%= a.company.brand %></td> 
-              <td><%= a.place %></td> 
               <td><%= a.staff.name %></td> 
               <td><%= a.salary %>円</td>
               <td><%= a.koutsuhi %>円</td> 
