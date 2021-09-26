@@ -1,0 +1,17 @@
+.company_area {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+    "company staff"
+    "button button";
+  .company_info {
+    grid-area: company;
+  }
+  .company_staff {
+    grid-area: staff;
+  }
+  .company_button {
+    grid-area: button;
+  }
+}

@@ -1,0 +1,87 @@
+<div class="w-full border-2 border-gray-300">
+  <div class="card-header search_head w-full flex items-center">
+    <i class="fas fa-search mr-2"></i>
+    <h2 class="font-bold">検索エリア</h2>
+  </div>
+  <%= search_form_for @q do |f| %>
+    <div class="flex items-center w-full">
+      <div class="search_left flex flex-col p-2 w-5/12 mr-4">
+        <div class="flex items-center reset_button mb-2">
+          <%= f.label :name, "会社名", class:"w-40 text-sm font-bold" %>
+          <%= f.search_field :name_cont, class: "w-full border-2 border-gray-300 rounded py-1 px-2 bg-gray-100" %>
+        </div>
+        <div class="flex items-center reset_button mb-2">
+          <%= f.label :name_kana, "会社名フリガナ", class:"w-40 text-sm font-bold" %>
+          <%= f.search_field :name_kana_cont, class:"w-full border-2 border-gray-300 rounded py-1 px-2 bg-gray-100" %>
+        </div>
+        <div class="flex items-center reset_button mb-2">
+          <%= f.label "給与支払日", class:"w-40 text-sm font-bold"%>
+          <div class="w-full flex items-center">
+            <%= f.search_field :closing_cont, class:"py-1 px-2 w-16 mr-3 border-2 border-gray-300 bg-gray-100 rounded" %>
+            <p class="mr-3">締</p>
+            <%= f.search_field :after_cont, class:"py-1 px-2 w-16 mr-3 border-2 border-gray-300 bg-gray-100 rounded" %>
+            <%= f.search_field :payment_cont, class:"py-1 px-2 w-16 mr-3 border-2 border-gray-300 bg-gray-100 rounded" %>
+            <p>払い</p>
+          </div>
+        </div>
+        <div class="flex items-center reset_button mb-2">
+          <%= f.label :product, "商品", class:"w-40 text-sm font-bold" %>
+          <%= f.search_field :product_cont, class:"w-full border-2 border-gray-300 rounded py-1 px-2 bg-gray-100" %>
+        </div>
+        <div class="flex items-center reset_button mb-2">
+          <%= f.label :brand, "ブランド", class:"w-40 text-sm font-bold" %>
+          <%= f.search_field :brand_cont, class:"w-full border-2 border-gray-300 rounded py-1 px-2 bg-gray-100" %>
+        </div>
+      </div>
+      <div class="search_center flex flex-col p-2 w-5/12 mr-4">
+        <div class="flex items-center reset_button mb-2">
+          <%= f.label "日程", class:"w-40 text-sm font-bold" %>
+          <div class="flex items-center w-full">
+            <%= f.search_field :admins_start, class:"w-5/12 border-2 border-gray-300 rounded py-1 px-2 bg-gray-100" %>
+            <p class="w-2/12 text-center">〜</p>
+            <%= f.search_field :admins_start_cont, class:"w-5/12 border-2 border-gray-300 rounded py-1 px-2 bg-gray-100" %>
+          </div>
+        </div>
+        <div class="flex items-center reset_button mb-2">
+          <%= f.label :admins_staff_name, "経験スタッフ", class:"w-40 text-sm font-bold" %>
+          <%= f.search_field :admins_staff_name_cont, class:"w-full border-2 border-gray-300 rounded py-1 px-2 bg-gray-100" %>
+        </div>
+        <div class="flex items-center reset_button mb-2">
+          <%= f.label :admins_staff_name_kanak, "フリガナ", class:"w-40 text-sm font-bold" %>
+          <%= f.search_field :admins_staff_name_kanak_cont, class:"w-full border-2 border-gray-300 rounded py-1 px-2 bg-gray-100" %>
+        </div>
+        <div class="flex items-center reset_button mb-2">
+          <%= f.label :admins_place, "出店場所", class:"w-40 text-sm font-bold" %>
+          <%= f.search_field :admins_place_cont, class:"w-full border-2 border-gray-300 rounded py-1 px-2 bg-gray-100" %>
+        </div>
+      </div>
+      <div class="search_center flex flex-col p-2 w-2/12 mr-4">
+        <%# <p>Null検索</p> %>
+        <div class="flex items-center reset_button mb-2">
+          <%= f.label :admins_place, "スタッフ", class:"w-2/3 text-sm font-bold" %>
+          <%= f.search_field :admins_place_cont, class:"w-1/3 border-2 border-gray-300 rounded py-1 px-2 bg-gray-100" %>
+        </div>
+        <div class="flex items-center reset_button mb-2">
+          <%= f.label :admins_place, "完了", class:"w-2/3 text-sm font-bold" %>
+          <%= f.search_field :admins_place_cont, class:"w-1/3 border-2 border-gray-300 rounded py-1 px-2 bg-gray-100" %>
+        </div>
+        <div class="flex items-center reset_button mb-2">
+          <%= f.label :admins_place, "詳細", class:"w-2/3 text-sm font-bold" %>
+          <%= f.search_field :admins_place_cont, class:"w-1/3 border-2 border-gray-300 rounded py-1 px-2 bg-gray-100" %>
+        </div>
+        <div class="flex items-center reset_button mb-2">
+          <%= f.label :admins_place, "人名", class:"w-2/3 text-sm font-bold" %>
+          <%= f.search_field :admins_place_cont, class:"w-1/3 border-2 border-gray-300 rounded py-1 px-2 bg-gray-100" %>
+        </div>
+      </div>
+    </div>
+    <div class="w-full search_button flex items-center justify-center mb-4">
+      <div id="search_button" class="text-white text-center mr-4 bg-green-500 hover:bg-green-700 py-1 px-8 rounded">
+        <%= f.submit "検　索", class: "bg-green-500 hover:bg-green-700" %>
+      </div>
+      <div id="js_clear_button", class="text-white text-center m-0 bg-green-500 hover:bg-green-700 font-bold py-1 px-8 rounded" >
+        <button>クリア</button>
+      </div>
+    </div>
+  <% end %>
+</div>

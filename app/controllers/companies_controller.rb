@@ -5,6 +5,8 @@ class CompaniesController < ApplicationController
 
   def index
     @companies = Company.all
+    @q = Company.ransack(params[:q])
+    @company_result = @q.result(distinct: true).includes(:admins).order("created_at desc")
   end
 
   def new
