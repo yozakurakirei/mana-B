@@ -16,8 +16,12 @@ import '../css/application.scss'
 import '../css/tailwind.css'
 import 'select2';  
 import 'select2/dist/css/select2.css';
-import '../js/select'
 import dt from "datatables.net";
+
+// js file import
+import '../js/select'
+import '../js/clear'
+
 
 document.addEventListener("turbolinks:load", () => {
   dt(window, $);

@@ -1,26 +1,32 @@
 <div class="w-full">
-  <div class="card-header search_head w-full">
+  <div class="card-header search_head w-full flex items-center">
+    <i class="fas fa-search mr-2"></i>
     <h2>検索エリア</h2>
   </div>
   <%= search_form_for @q do |f| %>
     <div class="flex items-center w-full">
       <div class="bg-gray-200 search_left flex flex-col p-2 w-1/2">
-        <div class="flex items-center">
+        <div class="flex items-center reset_button">
           <%= f.label :company_name, "会社名" %>
           <%= f.search_field :company_name_cont, class: "border" %>
         </div>
-        <div class="flex items-center">
+        <div class="flex items-center reset_button">
           <%= f.label :company_name_kana, "会社名フリガナ" %>
           <%= f.search_field :company_name_kana_cont %>
         </div>
       </div>
-      <div class="bg-gray-100 search_center p-2 w-1/2">
+      <div class="bg-gray-100 search_center p-2 w-1/2 reset_button">
         <%= f.label :staff_name, "スタッフ名" %>
         <%= f.search_field :staff_name_cont %>
       </div>
     </div>
-    <div class="search_button bg-gray-300">
-      <%= f.submit "検索", class: "btn btn-primary" %>
+    <div class="w-full search_button bg-gray-300 flex items-center justify-center">
+      <div id="search_button" class="text-white text-center mr-4 bg-blue-500 hover:bg-blue-700 py-1 px-8 rounded">
+        <%= f.submit "検　索", class: "bg-blue-500 hover:bg-blue-700" %>
+      </div>
+      <div id="js_clear_button", class="text-white text-center m-0 bg-blue-500 hover:bg-blue-700 font-bold py-1 px-8 rounded" >
+        <button>クリア</button>
+      </div>
     </div>
   <% end %>
 </div>
