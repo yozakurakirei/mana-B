@@ -1,0 +1,35 @@
+<div class="w-full mt-2">
+  <div class="font-bold mb-2">
+    <h2>受注履歴</h2>
+  </div>
+  <table class="shadow-sm card table table-responsive table-bordered text-nowrap">
+    <thead class="card-header">
+      <tr>
+        <th>スタッフ名</th>
+        <th>就業場所</th>
+        <th>日程</th>
+        <th>日給</th>
+        <th>担当者</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @company.admins.each do |s| %>
+      <tr>
+        <td>
+          <%= link_to admin_path(s) do %>
+            <%= s.staff.name %>
+          <% end %>
+        </td>
+        <td><%= s.place %></td>
+        <td><%= s.start %>〜<%= s.finish %></td>
+        <td><%= s.salary %>円</td>
+        <td><%= s.manager %></td>
+      </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+
+
+</div>
+
