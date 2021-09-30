@@ -9,7 +9,6 @@ class AdminsController < ApplicationController
     @admin = Admin.new
     @admin.build_report
     @admin.build_condition
-    @admin.build_count
   end
 
   def create
