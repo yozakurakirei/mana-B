@@ -9,6 +9,7 @@ class AdminsController < ApplicationController
     @admin = Admin.new
     @admin.build_report
     @admin.build_condition
+    @admin.build_count
   end
 
   def create
@@ -57,9 +58,11 @@ class AdminsController < ApplicationController
                                     :finish_time, :salary_kinds,
                                     :manager, :tel1, :tel2, :fax, :mana_user,
                                     :employment, :label, :decision, :report_day,
-                                    :detail, :completion,
+                                    :detail, :completion, :t_month, :n_month, :f_amount, :o_amount,
         report_attributes: [:report_id, :days, :times, :c_costs, :shotei, :choka, :remark,
                              :_destroy, :id],
-        condition_attributes: [:holiday, :shift_start, :shift_finish, :w_hours, :w_rest, :w_total, :over, :test_period, :_destroy, :id ]).merge(user_id: current_user.id, user_name: current_user.name)
+        condition_attributes: [:holiday, :shift_start, :shift_finish, :w_hours, :w_rest, :shift_umu,
+                               :w_total, :over, :test_period,:_destroy, :id ]).merge(user_id: current_user.id,
+                                                                                     user_name: current_user.name)
     end
 end

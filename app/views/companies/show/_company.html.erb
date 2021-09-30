@@ -2,16 +2,42 @@
   <div class="mb-2 font-bold">
     <h2>基本情報</h2>
   </div>
-  <table class="card table table-striped">
-    <tbody class="card-panel">
-      <tr>
-        <td>会社名</td>
-        <td><%= @company.name %></td>
-      </tr>
-      <tr>
-        <td>フリガナ</td>
-        <td><%= @company.name_kana %></td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="card table shadow-sm">
+      <tbody class="card-header">
+        <tr>
+          <td>会社名</td>
+          <td><%= @company.name %></td>
+        </tr>
+        <tr>
+          <td>フリガナ</td>
+          <td><%= @company.name_kana %></td>
+        </tr>
+        <tr>
+          <td>商品</td>
+          <td><%= @company.product %></td>
+        </tr>
+        <tr>
+          <td>ブランド・屋号</td>
+          <td><%= @company.brand %></td>
+        </tr>
+        <tr>
+          <td>手数料率</td>
+          <td><%= @company.fee %></td>
+        </tr>
+        <tr>
+          <td>給与支払日</td>
+          <td><%= @company.closing %>日締め<%= @company.after %><%= @company.payment %>日払い</td>
+        </tr>
+        <tr>
+          <td>作成日</td>
+          <td><%= @company.created_at.strftime('%Y年%m月%d日') %></td>
+        </tr>
+        <tr>
+          <td>更新日</td>
+          <td><%= @company.created_at.strftime('%Y年%m月%d日') %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

@@ -1,0 +1,16 @@
+<%= form_with(model: @admin) do |f| %>
+  <div class="flex items-center mr-10 w-2/3 h-full p-1">
+    <div class="flex items-center flex-col mr-2 w-1/6">
+      <%= f.label :t_month, "当月日数", class:"text-sm font-bold" %>
+      <%= f.text_field :t_month, class: "w-full text-center text-sm p-1 border" %>
+    </div>
+    <div class="flex items-center flex-col mr-2 w-1/6">
+      <%= f.label "翌月日数", class:"text-sm font-bold" %>
+      <%= f.text_field :n_month, class: "w-full text-center text-sm p-1 border" %>
+    </div>
+    <div class="flex items-center flex-col mr-2 w-1/6">
+      <%= f.label "事務手数料", class:"text-sm font-bold" %>
+      <%= f.text_field :o_amount, class: "w-full text-center text-sm p-1 border" %>
+    </div>
+  </div>
+<% end %>
