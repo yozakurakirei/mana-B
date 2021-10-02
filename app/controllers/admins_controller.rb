@@ -3,6 +3,11 @@ class AdminsController < ApplicationController
     @admins = Admin.includes(:company, :staff, :applies, :approvals).all.order("created_at desc")
     @q = Admin.ransack(params[:q])
     @admin_result = @q.result(distinct: true).includes(:company, :staff, :users).order("created_at desc")
+    
+    respond_to do |format|
+      format.html 
+      format.xlsx
+    end
   end
   
   def new

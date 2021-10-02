@@ -10,6 +10,10 @@ gem 'rails-i18n'
 # csv
 gem 'roo'
 gem 'nokogiri'
+# excel 
+gem 'caxlsx'
+gem 'caxlsx_rails'
+gem 'zip-zip'
 
 # 認証
 gem 'devise'
@@ -21,6 +25,9 @@ gem 'webpacker', '~> 5.0'
 
 # 検索
 gem 'ransack'
+
+# デバック
+gem 'pry-rails'
 
 gem 'puma', '~> 5.0'
 
