@@ -12,7 +12,6 @@ class AdminsController < ApplicationController
   
   def new
     @admin = Admin.new
-    @admin.build_report
     @admin.build_condition
   end
 
