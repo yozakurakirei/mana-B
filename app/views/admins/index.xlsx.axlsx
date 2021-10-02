@@ -1,0 +1,9 @@
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "admin_sheet") do |sheet|
+  sheet.add_row ["No.", "会社名", "場所"]
+
+  @admin_result.each.with_index(1) do |a, i|
+    sheet.add_row [i, a.company.name, a.place ]
+  end
+end

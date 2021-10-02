@@ -69,5 +69,9 @@
         </tbody>
       </table>
     </div>
+    <!-- excel button -->
+    <div class="mt-4">
+      <%= link_to 'Excel出力', admins_path(@admin_result, format: :xlsx), data: {confirm: "Excelで出力しますか？"}, class: "btn btn-primary" %>
+    </div>
   </div>
 </div>
