@@ -1,7 +1,7 @@
 class Admin < ApplicationRecord
   belongs_to :company
   belongs_to :staff
-  belongs_to :report
+  # belongs_to :report
   belongs_to :condition, optional: true, dependent: :destroy
   # 申請機能
   has_many :approvals, dependent: :destroy
@@ -18,5 +18,5 @@ class Admin < ApplicationRecord
   #   user.include?(user)
   # end
 
-  accepts_nested_attributes_for :report, :condition
+  accepts_nested_attributes_for :condition
 end

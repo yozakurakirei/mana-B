@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'administrator/index'
-  get 'administrator/employee'
+  resource :administrators do
+    collection do 
+      get 'index'
+      get 'employee'
+    end
+  end
 
   resources :companies do
     collection { post :import }

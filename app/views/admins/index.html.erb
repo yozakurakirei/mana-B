@@ -70,8 +70,13 @@
       </table>
     </div>
     <!-- excel button -->
-    <div class="mt-4">
-      <%= link_to 'Excel出力', admins_path(@admin_result, format: :xlsx), data: {confirm: "Excelで出力しますか？"}, class: "btn btn-primary" %>
+    <div class="flex items-center">
+      <div class="mt-4 mr-4">
+        <%= link_to 'Excel出力', admins_path(@admin_result, format: :xlsx), data: {confirm: "Excelで出力しますか？"}, class: "btn btn-primary" %>
+      </div>
+      <div class="mt-4">
+        <%= link_to 'CSV出力', admins_path(@admin_result, format: :csv), data: {confirm: "CSVで出力しますか？"}, class: "btn btn-primary" %>
+      </div>
     </div>
   </div>
 </div>
