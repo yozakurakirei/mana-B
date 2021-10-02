@@ -13,7 +13,6 @@ gem 'nokogiri'
 # excel 
 gem 'caxlsx'
 gem 'caxlsx_rails'
-gem 'zip-zip'
 
 # 認証
 gem 'devise'
