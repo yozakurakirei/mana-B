@@ -7,9 +7,8 @@ gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'pg', '~> 1.1'
 gem 'rails-i18n'
 
-# datatable
+# paginate
 gem 'kaminari'
-gem 'jquery-datatables-rails'
 
 # csv
 gem 'roo'
