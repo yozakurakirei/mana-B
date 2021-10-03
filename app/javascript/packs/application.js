@@ -5,8 +5,11 @@
 
 require("jquery")
 require('bootstrap/dist/js/bootstrap.min.js')
+
+// js file import
 require('../js/select')
 require('../js/clear')
+require('../js/datatable')
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
@@ -18,15 +21,12 @@ import '../css/application.scss'
 import '../css/tailwind.css'
 import 'select2';  
 import 'select2/dist/css/select2.css';
-// import dt from "datatables.net";
-
-// js file import
-import '../js/datatable'
-
+import dt from "datatables.net";
 
 document.addEventListener("turbolinks:load", () => {
-  dt(window, $);
-})
+    dt(window, $);
+});
+
 
 global.$ = jQuery;
 

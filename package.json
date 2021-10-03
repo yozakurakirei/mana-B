@@ -9,9 +9,11 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.2",
-    "@tailwindcss/postcss7-compat": "^2.2.10",
+    "@tailwindcss/postcss7-compat": "npm:@tailwindcss/postcss7-compat",
     "autoprefixer": "^9",
     "bootstrap": "^5.1.1",
+    "datatables.net": "^1.11.3",
+    "datatables.net-dt": "^1.11.3",
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
     "postcss": "^7",
@@ -25,6 +27,8 @@
   "version": "0.1.0",
   "devDependencies": {
     "@webpack-cli/serve": "^1.5.2",
-    "css-loader": "^6.3.0"
+    "css-loader": "^6.3.0",
+    "expose-loader": "^3.0.0",
+    "imports-loader": "^3.0.0"
   }
 }
