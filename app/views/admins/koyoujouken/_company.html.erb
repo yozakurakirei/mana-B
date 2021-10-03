@@ -1,8 +1,7 @@
 <div class="company_table mr-8">
 
-  <h3 class="mb-2">雇用条件書</h3>
-  <p>クライアントにはスタッフ名を、スタッフにはクライアント名が記載されている
-  雇用条件書が発送されます。</p>
+  <h2 class="mb-2">【雇用条件書】</h3>
+  <h3 class="mb-2">（<%= @admin.company.name %>）</h3>
 
   <table class="table-fixed bg-white shadow-md w-full mr-4">
     <tbody>
@@ -20,7 +19,7 @@
       </tr>
       <tr>
         <th class="w-2/5 border p-2">雇用契約期間</th>
-        <td class="w-3/5 border p-2"><%= @admin.start %>〜<%= @admin.finish %></td>
+        <td class="w-3/5 border p-2"><%= @admin.start.strftime('%Y年%m月%d日') %>〜<%= @admin.finish.strftime('%Y年%m月%d日') %></td>
       </tr>
       <tr>
         <th class="w-2/5 border p-2">試用期間</th>
@@ -33,9 +32,9 @@
       <tr>
         <th class="w-2/5 border p-2">始業・就業時間</th>
         <td class="w-3/5 p-2 flex">
-          <%= @admin.condition.shift_start %>
+          <%= @admin.condition.shift_start.strftime('%H:%M') %>
           <p>〜</p>
-          <%= @admin.condition.shift_finish %>
+          <%= @admin.condition.shift_finish.strftime('%H:%M') %>
         </td>
       </tr>
       <tr>
@@ -61,7 +60,7 @@
       <tr>
         <th class="w-2/5 border p-2">給与締め日支払日</th>
         <td class="w-3/5 border p-2">
-          <%= @admin.company.closing %>締め<%= @admin.company.after %>ヶ月後
+          <%= @admin.company.closing %>日締め<%= @admin.company.after %>ヶ月後
           <%= @admin.company.payment %>日払い
         </td>
       </tr>

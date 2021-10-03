@@ -63,8 +63,8 @@
 
       <div class="admin_body p-4">
         <div class="flex items-center mb-3 w-full">
-          <div class="w-3/12">
-            <%= f.label :company_id, "会社名", class: "text-sm w-full block text-left text-gray-500 font-bold mb-1" %>
+          <div class="w-3/12 flex items-flex flex-col">
+            <%= f.label :company_id, "会社名(必須)", class: "text-sm w-full block text-left text-gray-500 font-bold mb-1" %>
           </div>
           <div class="w-9/12">
             <%= f.collection_select(:company_id, Company.all, :id, :name, { prompt: "" },{class: "form-control p-4 w-full border-2 border-gray-200 rounded py-2 px-4 text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"}) %>
@@ -120,10 +120,10 @@
       <div class="admin_body p-4">
         <div class="flex items-center mb-3 w-full">
           <div class="w-3/12">
-            <%= f.label :staff_id, "スタッフ", class: "block text-sm text-left text-gray-500 font-bold mb-1 pr-4" %>
+            <%= f.label :staff_id, "スタッフ(必須)", class: "block text-sm text-left text-gray-500 font-bold mb-1 pr-4" %>
           </div>
           <div class="w-9/12">
-            <%= f.collection_select(:staff_id, Staff.all, :id, :name, { prompt: "" },{class: "form-control p-4 w-full border-2 border-gray-200 rounded py-2 px-4 text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"}) %>
+            <%= f.collection_select(:staff_id, Staff.all, :id, :name, { prompt: "", required: true },{class: "form-control p-4 w-full border-2 border-gray-200 rounded py-2 px-4 text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"}) %>
           </div>
         </div>
 

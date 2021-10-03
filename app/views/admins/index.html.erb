@@ -29,7 +29,6 @@
             <th>スタッフ名</th>
             <th>給与</th>
             <th>交通費</th>
-            <th>ID</th>
             <th>作成者</th>
             <th>承認ステータス</th>
             <th></th>
@@ -53,7 +52,6 @@
               <td><%= a.staff.name %></td> 
               <td><%= a.salary %>円</td>
               <td><%= a.koutsuhi %>円</td> 
-              <td><%= a.user_id %></td>
               <td><%= a.user_name %></td>
               <td>
                 <% if a.user_approval?(current_user) %>
