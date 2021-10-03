@@ -5,6 +5,8 @@
 
 require("jquery")
 require('bootstrap/dist/js/bootstrap.min.js')
+require('../js/select')
+require('../js/clear')
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
@@ -16,11 +18,9 @@ import '../css/application.scss'
 import '../css/tailwind.css'
 import 'select2';  
 import 'select2/dist/css/select2.css';
-import dt from "datatables.net";
+// import dt from "datatables.net";
 
 // js file import
-import '../js/select'
-import '../js/clear'
 import '../js/datatable'
 
 
