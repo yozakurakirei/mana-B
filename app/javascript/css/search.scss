@@ -22,3 +22,17 @@
 //     grid-area: button;
 //   }
 // }
+
+.dataTables_filter {
+  margin: .5rem 0;
+  label {
+    font-size: 1rem;
+    margin-right: 1rem;
+    input {
+      padding: .3rem;
+      margin-left: 1rem;
+      font-size: 1rem;
+      border: 1px solid #bbb;
+    }
+  }
+}

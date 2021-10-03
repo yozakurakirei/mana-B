@@ -2493,6 +2493,21 @@ cyclist@^1.0.1:
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-1.0.1.tgz#596e9698fd0c80e12038c2b82d6eb1b35b6224d9"
   integrity sha1-WW6WmP0MgOEgOMK4LW6xs1tiJNk=
 
+datatables.net-dt@^1.11.3:
+  version "1.11.3"
+  resolved "https://registry.yarnpkg.com/datatables.net-dt/-/datatables.net-dt-1.11.3.tgz#242556a490585b457b7d2b9f5fd8fb10761d621b"
+  integrity sha512-EX/thRwXpQRj8hZSb+ZMDNQ4uW1zLZa9BoAhhw1b5HIDH1nJ9WRTkERsoxE+3WISeX8bDiaEydf8TTQBSqxXVw==
+  dependencies:
+    datatables.net ">=1.10.25"
+    jquery ">=1.7"
+
+datatables.net@>=1.10.25, datatables.net@^1.11.3:
+  version "1.11.3"
+  resolved "https://registry.yarnpkg.com/datatables.net/-/datatables.net-1.11.3.tgz#80e691036efcd62467558ee64c07dd566cb761b4"
+  integrity sha512-VMj5qEaTebpNurySkM6jy6sGpl+s6onPK8xJhYr296R/vUBnz1+id16NVqNf9z5aR076OGcpGHCuiTuy4E05oQ==
+  dependencies:
+    jquery ">=1.7"
+
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -2932,6 +2947,11 @@ expand-tilde@^2.0.0, expand-tilde@^2.0.2:
   integrity sha1-l+gBqgUt8CRU3kawK/YhZCzchQI=
   dependencies:
     homedir-polyfill "^1.0.1"
+
+expose-loader@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/expose-loader/-/expose-loader-3.0.0.tgz#d6fe52efea6a957b88fe31c716a42e1b127fd225"
+  integrity sha512-X7ncrzmiQbJHOyLwuymECHk4NYvoPFwnsINMYFaRrm4fxuxR59hV1v65bho3TpIoWieP8WZmhz6micKny8orWg==
 
 express@^4.17.1:
   version "4.17.1"
@@ -3633,6 +3653,14 @@ import-local@^2.0.0:
     pkg-dir "^3.0.0"
     resolve-cwd "^2.0.0"
 
+imports-loader@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/imports-loader/-/imports-loader-3.0.0.tgz#069c314cb55a80e59ae72b5313273dafff8b3fc4"
+  integrity sha512-PhDB+rxpc95/1cM8ehxWAcuDIDi3eXhqHhax09iyUeAYBJ2bT6QbBp7aDj8IfU9Ns+2l1K226GhoWVAU823CTA==
+  dependencies:
+    source-map "^0.6.1"
+    strip-comments "^2.0.1"
+
 imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
@@ -4031,7 +4059,7 @@ jest-worker@^26.5.0:
     merge-stream "^2.0.0"
     supports-color "^7.0.0"
 
-jquery@^3.6.0:
+jquery@>=1.7, jquery@^3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.0.tgz#c72a09f15c1bdce142f49dbf1170bdf8adac2470"
   integrity sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==
@@ -6739,6 +6767,11 @@ strip-ansi@^5.0.0, strip-ansi@^5.1.0, strip-ansi@^5.2.0:
   integrity sha512-DuRs1gKbBqsMKIZlrffwlug8MHkcnpjs5VPmL1PAh+mA30U0DTotfDZ0d2UUsXpPmPmMMJ6W773MaA3J+lbiWA==
   dependencies:
     ansi-regex "^4.1.0"
+
+strip-comments@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/strip-comments/-/strip-comments-2.0.1.tgz#4ad11c3fbcac177a67a40ac224ca339ca1c1ba9b"
+  integrity sha512-ZprKx+bBLXv067WTCALv8SSz5l2+XhpYCsVtSqlMnkAXMWDq+/ekVbl1ghqP9rUHTzv6sm/DwCOiYutU/yp1fw==
 
 strip-eof@^1.0.0:
   version "1.0.0"
