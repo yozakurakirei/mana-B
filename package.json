@@ -9,7 +9,7 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.2",
-    "@tailwindcss/postcss7-compat": "^2.2.10",
+    "@tailwindcss/postcss7-compat": "npm:@tailwindcss/postcss7-compat",
     "autoprefixer": "^9",
     "bootstrap": "^5.1.1",
     "datatables.net": "^1.11.3",
