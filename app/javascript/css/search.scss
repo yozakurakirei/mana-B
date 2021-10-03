@@ -1,24 +1,11 @@
-// search area
-// .search_area {
-//   display: grid;
-//   gap: 1rem;
-//   grid-template-areas: 
-//     "head head head"
-//     "company staff place"
-//     "button button button";
-//   .search_head {
-//     grid-area: search_head;
-//   }
-//   .search_left {
-//     grid-area: company;
-//   }
-//   .search_center {
-//     grid-area: staff;
-//   }
-//   .search_right {
-//     grid-area: place;
-//   }
-//   .search_button {
-//     grid-area: button;
-//   }
-// }
+.dataTables_filter {
+  margin: .5rem 0;
+  label {
+    font-size: 1rem;
+    input {
+      padding: .3rem;
+      margin-left: 1rem;
+      border: 1px solid #ccc;
+    }
+  }
+}

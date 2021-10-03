@@ -18,7 +18,13 @@ $(function () {
 
   $('#admin_staff_id').val(null).trigger("change");
 
-  $('#admin_table').DataTable();
+  $('#admin_table').DataTable({
+    paging: false,
+    scrollY: 400,
+    'language': {
+      'url': "//cdn.datatables.net/plug-ins/3cfcc339e89/i18n/Japanese.json"
+    },
+  });
 
     let toggleBtn = document.querySelector("#navbar-toggle");
     let collapse = document.querySelector("#navbar-collapse");
