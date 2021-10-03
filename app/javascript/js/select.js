@@ -20,12 +20,13 @@ $(function () {
 
   $('#admin_table').DataTable();
 
-  let toggleBtn = document.querySelector("#navbar-toggle");
-  let collapse = document.querySelector("#navbar-collapse");
+    let toggleBtn = document.querySelector("#navbar-toggle");
+    let collapse = document.querySelector("#navbar-collapse");
 
-  toggleBtn.onclick = () => {
-  collapse.classList.toggle("hidden");
-  collapse.classList.toggle("flex");
+
+    toggleBtn.onclick = () => {
+    collapse.classList.toggle("hidden");
+    collapse.classList.toggle("flex");
 };
 
 });

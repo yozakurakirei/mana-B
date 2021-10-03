@@ -21,6 +21,7 @@ import dt from "datatables.net";
 // js file import
 import '../js/select'
 import '../js/clear'
+import '../js/datatable'
 
 
 document.addEventListener("turbolinks:load", () => {
