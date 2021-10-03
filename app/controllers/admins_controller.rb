@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
   def index
-    @admins = Admin.includes(:company, :staff, :users, :applies, :approvals).all.order("created_at desc")
+    @admins = Admin.includes(:company, :staff, :users, :applies, :approvals).all.order("created_at desc").page(params[:page])
     @q = Admin.ransack(params[:q])
     @admin_result = @q.result(distinct: true).includes(:company, :staff, :users).order("created_at desc")
     excel_export
