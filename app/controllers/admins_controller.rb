@@ -22,7 +22,6 @@ class AdminsController < ApplicationController
       flash[:success] = "保存が完了しました"
       redirect_to admins_path
     else
-      flash.now[:alert] = "保存できませんでした"
       render 'new'
     end
   end
@@ -64,7 +63,7 @@ class AdminsController < ApplicationController
                                     :detail, :completion, :t_month, :n_month, :f_amount, :o_amount,
         report_attributes: [:report_id, :days, :times, :c_costs, :shotei, :choka, :remark,
                              :_destroy, :id],
-        condition_attributes: [:holiday, :shift_start, :shift_finish, :w_hours, :w_rest, :shift_umu,
+        condition_attributes: [:holiday, :start_time, :finish_time, :w_hours, :w_rest, :shift_umu,
                                :w_total, :over, :test_period,:_destroy, :id ]).merge(user_id: current_user.id,
                                                                                      user_name: current_user.name)
     end

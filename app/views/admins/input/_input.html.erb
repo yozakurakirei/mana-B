@@ -67,13 +67,13 @@
             <%= f.label :company_id, "会社名(必須)", class: "text-sm w-full block text-left text-gray-500 font-bold mb-1" %>
           </div>
           <div class="w-9/12">
-            <%= f.collection_select(:company_id, Company.all, :id, :name, { prompt: "" },{class: "form-control p-4 w-full border-2 border-gray-200 rounded py-2 px-4 text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"}) %>
+            <%= f.collection_select(:company_id, Company.all, :id, :name, { prompt: "選択してください(必須)" },{class: "form-control p-4 w-full border-2 border-gray-200 rounded py-2 px-4 text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"}) %>
           </div>
         </div>
 
         <div class="flex items-center mb-3 w-full">
           <div class="w-3/12">
-            <%= f.label "日程", class: "text-sm w-full block text-left text-gray-500 font-bold mb-1 pr-4" %>
+            <%= f.label "日程(必須)", class: "text-sm w-full block text-left text-gray-500 font-bold mb-1 pr-4" %>
           </div>
           <div class="w-9/12">
             <div class="flex items-center w-full">
@@ -123,7 +123,7 @@
             <%= f.label :staff_id, "スタッフ(必須)", class: "block text-sm text-left text-gray-500 font-bold mb-1 pr-4" %>
           </div>
           <div class="w-9/12">
-            <%= f.collection_select(:staff_id, Staff.all, :id, :name, { prompt: "", required: true },{class: "form-control p-4 w-full border-2 border-gray-200 rounded py-2 px-4 text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"}) %>
+            <%= f.collection_select(:staff_id, Staff.all, :id, :name, { prompt: "選択してください(必須)", required: true },{class: "form-control p-4 w-full border-2 border-gray-200 rounded py-2 px-4 text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"}) %>
           </div>
         </div>
 
@@ -136,7 +136,7 @@
               <%= f.select :salary_kinds, {"日給": "日給", "時給": "時給"}, {selected: 1} , class: "border-2 text-sm border-gray-200 rounded w-full py-1 px-1 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" %>
             </div>
             <div class="w-2/3 flex items-center">
-              <%= f.text_field :salary, class: "border-2 border-gray-200 text-sm rounded w-full mr-2 py-1 px-1 text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" %>
+              <%= f.number_field :salary, class: "border-2 border-gray-200 text-sm rounded w-full mr-2 py-1 px-1 text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" %>
               <p>円</p>
             </div>
           </div>
@@ -147,7 +147,6 @@
           </div>
           <div class="w-9/12 flex items-center">
             <%= f.text_field :koutsuhi, class: "border-2 text-sm border-gray-200 rounded w-full mr-2 py-1 px-1 text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" %>
-            <p>円</p>
           </div>
         </div>
         <div class="flex items-center mb-3 w-full">
@@ -180,21 +179,21 @@
             <%= f.fields_for :condition do |c| %>
             <div class="attend_area flex items-center w-full mb-2">
               <div class="flex items-center mr-4">  
-                <div class="mr-2">
-                  <%= c.label "シフト合計", class:"mb-0 text-sm" %>
+                <div class="w-32 mr-2">
+                  <%= c.label "勤務時間(必須)", class:"mb-0 text-sm" %>
                 </div>
                 <div class="flex items-center">
                   <div class="border">
-                    <%= c.time_field(:shift_start, value: "%H:%M", class: "p-1 text-sm") %>
+                    <%= c.time_field(:start_time, value: "%H:%M", class: "p-1 text-sm") %>
                   </div>
                   <p class="mx-2">〜</p>
                   <div class="border">
-                    <%= c.time_field(:shift_finish, value: "%H:%M", class: "p-1 text-sm") %>
+                    <%= c.time_field(:finish_time, value: "%H:%M", class: "p-1 text-sm") %>
                   </div>
                 </div>
               </div>
               <div class="flex items-center mr-4">
-                <div class="mr-2">
+                <div class="mr-2 w-20">
                   <%= c.label "シフト有無", class:"mb-0 text-sm" %>            
                 </div>
                 <div class="border">
@@ -203,10 +202,10 @@
               </div>
               <div class="flex items-center">
                 <div class="mr-2">
-                  <%= f.label "初日集合時間", class:"mb-0 text-sm" %>
+                  <%= f.label "初日時間", class:"mb-0 text-sm" %>
                 </div>
                 <div class="border">
-                  <%= f.text_field :first_shift, class: "p-1 w-36 text-sm" %>
+                  <%= f.text_field :first_shift, class: "p-1 w-24 text-sm" %>
                 </div>
               </div>
             </div>
@@ -218,10 +217,6 @@
               <div class="shift_start flex items-center mr-4 w-38">
                 <%= c.label "休憩時間", class: "text-sm mr-2" %>
                 <%= c.number_field :w_rest, class:"p-1 w-14 text-sm border" %>　時間
-              </div>
-              <div class="shift_start flex items-center mr-4 w-38">
-                <%= c.label "拘束時間", class: "text-sm mr-2" %>
-                <%= c.number_field :w_total, class: "p-1 w-14 text-sm border" %>　時間
               </div>
             </div>
             <div class="attend_area flex items-center w-full mb-2">

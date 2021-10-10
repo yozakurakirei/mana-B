@@ -19,4 +19,10 @@ class Admin < ApplicationRecord
   # end
 
   accepts_nested_attributes_for :condition
+
+  # バリデーション
+  with_options presence: true do 
+    validates :start, :finish
+  end
+
 end

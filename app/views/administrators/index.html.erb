@@ -1,14 +1,43 @@
-<% if current_user.admin? %>
-  <h1>管理者権限ありのページ</h1>
-  <%= link_to "承認待ちリスト", admin_applies_path(@admin), class: "btn btn-primary" %>
-<% else %>
-  <h1><%= current_user.name %>さんには権限がありません</h1>
-<% end %>
+<div class="border m-4 bg-white">
+  <div class="font-bold p-4 flex items-center">
+    <i class="fas fa-list mr-2 text-2xl text-green-500"></i>
+    <h1 class="text-gray-600">さっそく業務を始める</h1>
+  </div>
+  <div class="flex justify-around px-4">
+    <div class="flex items-center flex-col mr-12 w-1/3">
+      <h2 class="font-bold mb-2">受注関係</h2>
+      <div class="flex items-center w-full mb-8 hover:bg-gr-700">
+        <%= link_to '受注リスト', admins_path, class: "text-2xl text-white bg-green-500 p-3 font-bold rounded-md w-full text-center" %>
+      </div>
+      <div class="flex items-center w-full mb-8 hover:bg-gr-700">
+        <%= link_to '受注入力', new_admin_path, class: "text-2xl text-white bg-green-500 p-3 font-bold rounded-md w-full text-center" %>
+      </div>
+    </div>
+    <div class="flex items-center flex-col mr-12 w-1/3">
+      <h2 class="font-bold mb-2">クライアント関係</h2>
+      <div class="flex items-center w-full mb-8 hover:bg-gr-700">
+          <%= link_to 'クライアント一覧', companies_path, class: "text-2xl text-white bg-green-500 p-3 font-bold rounded-md w-full text-center" %>
+        </div>
+        <div class="flex items-center w-full mb-8 hover:bg-gr-700">
+          <%= link_to 'クライアント登録', new_company_path, class: "text-2xl text-white bg-green-500 p-3 font-bold rounded-md w-full text-center" %>
+        </div>
+      </div>
+    <div class="flex items-center flex-col w-1/3">
+      <h2 class="font-bold mb-2">スタッフ関係</h2>
+      <div class="bg-gray-300 flex items-center w-full mb-8 hover:bg-gr-700">
+        <%= link_to 'スタッフ一覧', staffs_path, class: "text-2xl text-white bg-green-500 p-3 font-bold rounded-md w-full text-center" %>
+      </div>
+      <div class="bg-gray-300 flex items-center w-full mb-8 hover:bg-gr-700">
+        <%= link_to 'スタッフ登録', new_staff_path, class: "text-2xl text-white bg-green-500 p-3 font-bold rounded-md w-full text-center" %>
+    </div>
+  </div>
+</div>
+<div class="m-4">
+  <% if current_user.admin? %>
+    <h1 class="text-gray-600">管理者権限ありのページ</h1>
+    <%= link_to "承認待ちリスト", admin_applies_path(@admin), class: "btn btn-primary my-4" %>
+  <% else %>
+    <h1><%= current_user.name %>さんには権限がありません</h1>
+  <% end %>
+</div>
 
-<h2>admin権限があるとできること</h2>
-<ul>
-  <li>承認待ちページから承認できる</li>
-  <li>クライアント、スタッフ情報の編集ができる</li>
-  <li>管理者権限ページが見れる</li>
-  <li>社員情報の編集ができる</li>
-</ul>

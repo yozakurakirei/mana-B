@@ -4,8 +4,8 @@
     <h2 class="font-bold">検索エリア</h2>
   </div>
   <%= search_form_for @q do |f| %>
-    <div class="flex items-center w-full">
-      <div class="search_left flex flex-col p-2 w-5/12 mr-4">
+    <div class="flex w-full">
+      <div class="search_left flex flex-col p-2 w-5/12 mr-16">
         <div class="flex items-center reset_button mb-2">
           <%= f.label :name, "会社名", class:"w-40 text-sm font-bold" %>
           <%= f.search_field :name_cont, class: "w-full border-2 border-gray-300 rounded py-1 px-2 bg-gray-100" %>
@@ -45,25 +45,6 @@
         <div class="flex items-center reset_button mb-2">
           <%= f.label :admins_place, "出店場所", class:"w-40 text-sm font-bold" %>
           <%= f.search_field :admins_place_cont, class:"w-full border-2 border-gray-300 rounded py-1 px-2 bg-gray-100" %>
-        </div>
-      </div>
-      <div class="search_center flex flex-col p-2 w-2/12 mr-4">
-        <%# <p>Null検索</p> %>
-        <div class="flex items-center reset_button mb-2">
-          <%= f.label :admins_place, "スタッフ", class:"w-2/3 text-sm font-bold" %>
-          <%= f.search_field :admins_place_cont, class:"w-1/3 border-2 border-gray-300 rounded py-1 px-2 bg-gray-100" %>
-        </div>
-        <div class="flex items-center reset_button mb-2">
-          <%= f.label :admins_place, "完了", class:"w-2/3 text-sm font-bold" %>
-          <%= f.search_field :admins_place_cont, class:"w-1/3 border-2 border-gray-300 rounded py-1 px-2 bg-gray-100" %>
-        </div>
-        <div class="flex items-center reset_button mb-2">
-          <%= f.label :admins_place, "詳細", class:"w-2/3 text-sm font-bold" %>
-          <%= f.search_field :admins_place_cont, class:"w-1/3 border-2 border-gray-300 rounded py-1 px-2 bg-gray-100" %>
-        </div>
-        <div class="flex items-center reset_button mb-2">
-          <%= f.label :admins_place, "人名", class:"w-2/3 text-sm font-bold" %>
-          <%= f.search_field :admins_place_cont, class:"w-1/3 border-2 border-gray-300 rounded py-1 px-2 bg-gray-100" %>
         </div>
       </div>
     </div>

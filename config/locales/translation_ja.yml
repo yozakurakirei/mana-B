@@ -1,0 +1,131 @@
+ja:
+  activerecord:
+    models:
+      admin: 管理者  #g
+      apply: 申し込み  #g
+      approval: 承認  #g
+      branch: ブランチ  #g
+      company: 会社  #g
+      condition: 状態  #g
+      report: 報告  #g
+      staff: スタッフ  #g
+      user: ユーザー  #g
+
+    attributes:
+      admin:
+        applies: 適用します  #g
+        approvals: 承認  #g
+        company: :activerecord.models.company  #g
+        completion: 完了  #g
+        condition: :activerecord.models.condition  #g
+        decision: 決断  #g
+        detail: 詳細  #g
+        employment: 雇用  #g
+        f_amount: F量  #g
+        fax: ファックス  #g
+        finish: 終了日  #g
+        first_shift: 最初のシフト  #g
+        koutsuhi: コツヒ  #g
+        label: ラベル  #g
+        mana_user: マナユーザー  #g
+        manager: マネジャー  #g
+        money_remarks: お金の発言  #g
+        n_month: Nヶ月  #g
+        o_amount: O量  #g
+        place: 場所  #g
+        place_remarks: 備考を置く  #g
+        report_day: 報告日  #g
+        salary: 給料  #g
+        salary_kinds: 給与の種類  #g
+        staff: :activerecord.models.staff  #g
+        start: 開始日  #g
+        t_month: Tヶ月  #g
+        tel1: Tel1  #g
+        tel2: Tel2  #g
+        user_name: ユーザー名  #g
+        users: ユーザー  #g
+
+      apply:
+        admin: :activerecord.models.admin  #g
+        user: :activerecord.models.user  #g
+
+      approval:
+        admin: :activerecord.models.admin  #g
+        user: :activerecord.models.user  #g
+
+      branch:
+        department: デパートメント  #g
+        name: 名前  #g
+        user: :activerecord.models.user  #g
+
+      company:
+        admins: 管理者  #g
+        after: 後  #g
+        brand: ブランド  #g
+        closing: 閉鎖  #g
+        fee: 手数料  #g
+        name: 名前  #g
+        name_kana: 名前かな  #g
+        o_fee: Oフィー  #g
+        p_email: Pメール  #g
+        p_fax: Pファックス  #g
+        p_tel: P tel  #g
+        p_tel2: P tel2  #g
+        payment: 支払い  #g
+        person: 人  #g
+        product: 製品  #g
+        remarks: 備考  #g
+        staffs: スタッフ  #g
+
+      condition:
+        admins: 管理者  #g
+        finish_time: 終了時間  #g
+        holiday: ホリデー  #g
+        over: 以上  #g
+        remarks: 備考  #g
+        shift_finish: シフトフィニッシュ  #g
+        shift_start: シフトスタート  #g
+        shift_umu: シフトウム  #g
+        start_time: 始まる時間  #g
+        test_period: テスト期間  #g
+        w_hours: W時間  #g
+        w_rest: Wレスト  #g
+        w_total: W合計  #g
+
+      report:
+        admins: 管理者  #g
+        c_costs: Cコスト  #g
+        choka: ちょか  #g
+        days: 日々  #g
+        remark: 述べる  #g
+        shotei: 翔平  #g
+        times: タイムズ  #g
+
+      staff:
+        admins: 管理者  #g
+        name: 名前  #g
+        name_kanak: 名前カナック  #g
+        remarks: 備考  #g
+
+      user:
+        admin: 管理者  #g
+        admins: 管理者  #g
+        applies: 適用します  #g
+        approvals: 承認  #g
+        confirmation_sent_at: に送信された確認  #g
+        confirmation_token: 確認トークン  #g
+        confirmed_at: で確認  #g
+        current_sign_in_at: 現在のサインイン  #g
+        current_sign_in_ip: 現在のサインインIP  #g
+        email: Eメール  #g
+        encrypted_password: 暗号化されたパスワード  #g
+        failed_attempts: 失敗した試行  #g
+        last_sign_in_at: 最後のサインインは  #g
+        last_sign_in_ip: ラストサインインIP  #g
+        locked_at: でロック  #g
+        name: 名前  #g
+        remember_created_at: で作成されたことを忘れないでください  #g
+        reset_password_sent_at: で送信されたパスワードをリセット  #g
+        reset_password_token: パスワードトークンをリセット  #g
+        unconfirmed_email: 未確認のメール  #g
+        unlock_token: トークンのロックを解除する  #g
