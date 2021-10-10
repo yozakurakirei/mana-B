@@ -1,24 +1,21 @@
-# README
+# Hello!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+これは、マネキン販売員の受注管理アプリです。
+業務効率化のために、日々開発中です。
 
-Things you may want to cover:
+## マネキンとは
+デパートや駅にある店舗において、
+商品の宣伝や販売促進をしている、販売員のことです。
+短期派遣は法律で禁止されていますが、
+マネキンは期間制限がないため、1日だけでもOKです。
 
-* Ruby version
+## 開発に至った経緯
+私は、マネキンを企業に斡旋する人材業を行なっております。
+受注管理はエクセルやアクセス、期間システムで行なっており、
+毎日、2画面３画面開かないと仕事ができない状態でした。
+そこで、1つの画面で仕事を進めることができるよう、
+開発をしてみました！
 
-* System dependencies
+テーブルのリレーションは下記のような感じです。
+![table relation](images/mana.png)
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
