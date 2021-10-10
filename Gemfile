@@ -17,6 +17,7 @@ gem 'caxlsx_rails'
 
 # 認証
 gem 'devise'
+gem 'devise-i18n'
 
 # css,js
 gem 'tailwindcss-rails'
@@ -61,6 +62,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'bullet'
+  gem 'i18n_generators'
 end
 
 group :test do

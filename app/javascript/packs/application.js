@@ -22,6 +22,7 @@ import dt from "datatables.net";
 import '../js/select'
 import '../js/clear'
 import '../js/datatable'
+import '../js/flash_message'
 
 
 document.addEventListener("turbolinks:load", () => {

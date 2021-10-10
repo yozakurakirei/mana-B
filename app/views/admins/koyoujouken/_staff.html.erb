@@ -26,10 +26,10 @@
       </tr>
       <tr>
         <th class="w-2/5 border p-2">始業・就業時間</th>
-        <td class="w-3/5 border p-2 flex">
-          <%= @admin.condition.shift_start.strftime('%H:%M') %>
+        <td class="w-3/5 p-2 flex">
+          <%= l @admin.condition.start_time, format: :shift %>
           <p>〜</p>
-          <%= @admin.condition.shift_finish.strftime('%H:%M') %>
+          <%= l @admin.condition.finish_time, format: :shift %>
         </td>
       </tr>
       <tr>
@@ -37,8 +37,12 @@
         <td class="w-3/5 border p-2 mr-4"><%= @admin.condition.over %></td>
       </tr>
       <tr>
-        <th class="w-2/5 border p-2">休憩時間</th>
-        <td class="w-3/5 border p-2"><%= @admin.condition.w_rest %> 分</td>
+        <th class="w-2/5 border p-2">勤務条件</th>
+        <td class="w-3/5 border p-2">
+          実働 <%= @admin.condition.w_hours %> 時間・
+          休憩 <%= @admin.condition.w_rest %> 時間・
+          拘束 <%= @admin.condition.sum_w_total %> 時間
+        </td>
       </tr>
       <tr>
         <th class="w-2/5 border p-2">休日</th>
